@@ -110,19 +110,73 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Technical Category**: FinTech
 - **Demonstration Goal**: AI Integration, Infrastructure as Code
 
+## Project 3: Affirm Application (Merchant Analytics Dashboard)
+
+### Project Overview
+- **Project Summary**: A real-time analytics dashboard for Affirm merchants to visualize customer conversion rates, AOV increases, and payment plan selection patterns.
+- **Project Value Proposition**: Empowers merchants with real-time insights about their Affirm integration, demonstrating clear ROI and helping identify opportunities to improve conversion.
+
+### Company Information
+- **Company Name**: Affirm
+- **Company Size**: Large (publicly traded company)
+- **Industry**: Financial Technology (BNPL - Buy Now, Pay Later)
+- **Location**: San Francisco, CA (with remote options)
+- **Funding Stage**: N/A (publicly traded)
+- **Public/Private**: Public
+
+### Position Details
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: [To be filled]
+- **Stated Base Salary**: [To be filled]
+- **Estimated Total Comp**: [To be filled]
+
+### Project Execution
+- **Hours Spent**: 7 hours
+- **Completion Date**: March 19, 2025
+- **Project Day**: 3
+
+### Technical Metrics
+- **Primary Technologies**: React, TypeScript, AWS Lambda, DynamoDB, S3, API Gateway, AWS CDK
+- **Secondary Technologies**: Express, serverless-http, Vite, Tanstack Router, CSS Modules, Chart.js/D3.js
+- **Lines of Code**: [To be filled]
+- **Deployment Mechanism**: AWS CDK
+
+### Resource Utilization
+- **LLM Dollars Spent**: $24.96
+- **Hosting Dollars Spent**: $0
+
+### Learning Metrics
+- **New Technologies Learned**: DynamoDB Streams
+- **Skills Improved**: Using Claude with the memory bank pattern
+- **Key Challenges**: Cold start latency, DynamoDB stream processing, real-time updates, cross-package dependencies, one-day timeline, demo data creation, error handling
+
+### Application Impact
+- **Response Received**: [To be filled]
+- **Response Time**: [To be filled]
+- **Response Type**: [To be filled]
+- **Feedback Received**: [To be filled]
+- **Interview Conversion**: [To be filled]
+
+### Project Tagging
+- **Project Type**: Web Application, Serverless
+- **Primary Focus**: Full Stack, Cloud Infrastructure
+- **Business Value**: Data-Driven Decisions, Merchant Insights
+- **Technical Category**: FinTech
+- **Demonstration Goal**: Real-time Analytics, AWS Infrastructure
+
 ## Summary Metrics (Across All Projects)
 
 ### Technology Distribution
-- **Frontend Frameworks**: React (2)
-- **Backend Technologies**: FastAPI (1), AWS Lambda (1)
-- **Languages**: TypeScript (2), Python (1), JavaScript (1)
-- **Cloud Providers**: AWS (1)
+- **Frontend Frameworks**: React (3)
+- **Backend Technologies**: FastAPI (1), AWS Lambda (2), DynamoDB (1)
+- **Languages**: TypeScript (3), Python (1), JavaScript (1)
+- **Cloud Providers**: AWS (2)
 - **AI/ML Technologies**: scikit-learn (1), LangChain.js (1)
-- **Deployment Mechanisms**: None (1), AWS CDK (1)
+- **Deployment Mechanisms**: None (1), AWS CDK (2)
 
 ### Resource Averages
-- **Average Hours Spent**: 6.5 hours
-- **Average LLM Dollars Spent**: $23.42
+- **Average Hours Spent**: 6.67 hours
+- **Average LLM Dollars Spent**: $23.93
 - **Average Hosting Dollars Spent**: $0
 
 ### Outcome Statistics
@@ -130,8 +184,8 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Interview Conversion Rate**: [To be calculated]
 
 ### Project Type Distribution
-- **Web Applications**: 2
-- **Serverless Applications**: 1
+- **Web Applications**: 3
+- **Serverless Applications**: 2
 - **Machine Learning Applications**: 1
 - **Mobile Applications**: 0
 - **Desktop Applications**: 0
