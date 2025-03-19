@@ -58,6 +58,7 @@ The 10x10 Job Application Portfolio project is in its initial planning and setup
 5. Collect complete metrics for existing projects (Anima and Hiive)
 6. Create initial structure for the portfolio website
 7. Test the project completion procedure with existing projects
+8. Set up Google Analytics for portfolio tracking and metrics collection
 
 ### Medium-term (Next 3-7 Days)
 1. Begin development of the portfolio website framework
@@ -110,6 +111,15 @@ The 10x10 Job Application Portfolio project is in its initial planning and setup
   - Radar/spider charts for multi-dimensional metrics
   - Timeline visualization showing progression
 - **Current Direction**: Planning to use a combination of visualization types appropriate to each metric category
+
+### Analytics Implementation
+- **Decision Needed**: Determine the optimal Google Analytics 4 implementation approach
+- **Options**:
+  - Basic pageview tracking only
+  - Comprehensive event tracking for user interactions
+  - Custom dimensions for project-specific metrics
+  - Integration with portfolio metrics data
+- **Current Direction**: Implementing comprehensive event tracking with custom dimensions for project metrics
 
 ### Integration with Project Repositories
 - **Decision Needed**: Establish how to link portfolio with project source code

@@ -18,9 +18,11 @@
 - **Diagram Rendering**: Mermaid.js for rendering architecture diagrams
 
 ### Analytics and Tracking
-- **Usage Analytics**: Simple analytics for privacy-friendly tracking
+- **Usage Analytics**: Google Analytics 4 for comprehensive user behavior tracking
 - **Performance Monitoring**: Next.js Analytics for core web vitals
 - **Error Tracking**: Sentry for error monitoring and reporting
+- **Conversion Tracking**: Google Analytics goals and events for measuring portfolio effectiveness
+- **Custom Reporting**: Google Analytics dashboards for project comparison metrics
 
 ## Development Environment
 
