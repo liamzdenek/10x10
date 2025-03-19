@@ -4,6 +4,10 @@ This document defines the standardized metrics tracked for each project in the 1
 
 ## Core Metrics
 
+### Project Overview
+- **Project Summary**: Brief one-sentence description of the project
+- **Project Value Proposition**: One-sentence statement of the project's core value
+
 ### Company Information
 - **Company Name**: Name of the target company
 - **Company Size**: Size of the company (e.g., startup, mid-size, enterprise)
@@ -14,16 +18,10 @@ This document defines the standardized metrics tracked for each project in the 1
 
 ### Position Details
 - **Title Sought**: Job title being applied for
-- **Department**: Department or team within the company
-- **Seniority Level**: Level of the position (e.g., Junior, Mid, Senior, Lead)
 - **Sent to Who**: Titles of the recipients (not names)
-- **Reporting Structure**: Who the role reports to and team structure
 
 ### Project Execution
 - **Hours Spent**: Total time invested in the project
-- **Development Time**: Hours spent on actual coding/implementation
-- **Research Time**: Hours spent researching the company and problem space
-- **Documentation Time**: Hours spent on documentation and memory bank
 - **Completion Date**: When the project was completed
 - **Project Day**: Which day in the 10-day sequence this project was completed
 
@@ -31,37 +29,16 @@ This document defines the standardized metrics tracked for each project in the 1
 - **Primary Technologies**: Main technologies/frameworks used
 - **Secondary Technologies**: Supporting technologies used
 - **Lines of Code**: Approximate lines of code written
-- **Components Created**: Number of components/modules created
-- **APIs Integrated**: External APIs or services integrated
-- **Testing Coverage**: Extent of testing implemented
+- **Deployment Mechanism**: Method used to deploy the project
 
 ### Resource Utilization
 - **LLM Dollars Spent**: Cost of AI assistance used
 - **Hosting Dollars Spent**: Cost of deployment and hosting
-- **External Services Cost**: Cost of any other paid services used
-- **Free Tier Services**: Free services leveraged
-- **Total Project Cost**: Sum of all financial resources used
-
-### Project Complexity
-- **Scope Complexity**: Rating of project scope complexity (1-5)
-- **Technical Complexity**: Rating of technical implementation complexity (1-5)
-- **Domain Complexity**: Rating of domain/business complexity (1-5)
-- **Integration Complexity**: Rating of external integration complexity (1-5)
-- **Overall Complexity Score**: Composite score of all complexity ratings
 
 ### Learning Metrics
 - **New Technologies Learned**: Technologies used for the first time
 - **Skills Improved**: Existing skills that were enhanced
 - **Key Challenges**: Major challenges encountered
-- **Problem-Solving Approaches**: Strategies used to overcome challenges
-- **Time to Proficiency**: How quickly new technologies were learned
-
-### Outcome Metrics
-- **Project Completeness**: How complete the project is (percentage)
-- **Core Features Implemented**: Number of core features successfully implemented
-- **Stretch Goals Achieved**: Number of stretch goals achieved
-- **Known Limitations**: Documented limitations due to time constraints
-- **Future Enhancements**: Identified opportunities for improvement
 
 ### Application Impact
 - **Response Received**: Whether a response was received (Yes/No)

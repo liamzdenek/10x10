@@ -83,25 +83,22 @@ Ask the following retrospective questions to capture qualitative insights:
 
 The following metrics must be collected for each project:
 
+### Project Overview
+- Project Summary
+- Project Value Proposition
+
 ### Basic Information
 - Company Name
 - Company Size
 - Industry
 - Location
 - Title Sought
-- Department
-- Seniority Level
 - Sent to Who (titles only)
 
 ### Resource Metrics
 - Hours Spent (total)
-- Development Time
-- Research Time
-- Documentation Time
 - LLM Dollars Spent
 - Hosting Dollars Spent
-- External Services Cost
-- Total Project Cost
 
 ### Technical Details
 - Primary Technologies
@@ -109,101 +106,74 @@ The following metrics must be collected for each project:
 - Project Type
 - Primary Focus
 - Lines of Code
-- Components Created
-- APIs Integrated
+- Deployment Mechanism
 
-### Complexity and Learning
-- Scope Complexity (1-5)
-- Technical Complexity (1-5)
-- Domain Complexity (1-5)
+### Learning Metrics
 - New Technologies Learned
+- Skills Improved
 - Key Challenges
-- Problem-Solving Approaches
 
-### Outcome Information
-- Project Completeness (%)
-- Core Features Implemented
-- Known Limitations
+### Application Impact
 - Response Received (if applicable)
+- Response Time (if applicable)
 - Response Type (if applicable)
+- Feedback Received (if applicable)
+- Interview Conversion (if applicable)
 
 ## Metric Collection Template
 
 ```markdown
 # Project Metrics: [Project Name]
 
+## Project Overview
+- **Project Summary**:
+- **Project Value Proposition**:
+
 ## Company Information
-- **Company Name**: 
-- **Company Size**: 
-- **Industry**: 
-- **Location**: 
-- **Funding Stage** (if applicable): 
-- **Public/Private**: 
+- **Company Name**:
+- **Company Size**:
+- **Industry**:
+- **Location**:
+- **Funding Stage** (if applicable):
+- **Public/Private**:
 
 ## Position Details
-- **Title Sought**: 
-- **Department**: 
-- **Seniority Level**: 
-- **Sent to Who**: 
-- **Reporting Structure**: 
+- **Title Sought**:
+- **Sent to Who**:
 
 ## Project Execution
-- **Hours Spent**: 
-- **Development Time**: 
-- **Research Time**: 
-- **Documentation Time**: 
-- **Completion Date**: 
-- **Project Day**: 
+- **Hours Spent**:
+- **Completion Date**:
+- **Project Day**:
 
 ## Technical Metrics
-- **Primary Technologies**: 
-- **Secondary Technologies**: 
-- **Lines of Code**: 
-- **Components Created**: 
-- **APIs Integrated**: 
-- **Testing Coverage**: 
+- **Primary Technologies**:
+- **Secondary Technologies**:
+- **Lines of Code**:
+- **Deployment Mechanism**:
 
 ## Resource Utilization
-- **LLM Dollars Spent**: 
-- **Hosting Dollars Spent**: 
-- **External Services Cost**: 
-- **Free Tier Services**: 
-- **Total Project Cost**: 
-
-## Project Complexity
-- **Scope Complexity**: 
-- **Technical Complexity**: 
-- **Domain Complexity**: 
-- **Integration Complexity**: 
-- **Overall Complexity Score**: 
+- **LLM Dollars Spent**:
+- **Hosting Dollars Spent**:
 
 ## Learning Metrics
-- **New Technologies Learned**: 
-- **Skills Improved**: 
-- **Key Challenges**: 
-- **Problem-Solving Approaches**: 
-- **Time to Proficiency**: 
-
-## Outcome Metrics
-- **Project Completeness**: 
-- **Core Features Implemented**: 
-- **Stretch Goals Achieved**: 
-- **Known Limitations**: 
-- **Future Enhancements**: 
+- **New Technologies Learned**:
+- **Skills Improved**:
+- **Key Challenges**:
 
 ## Application Impact
-- **Response Received**: 
-- **Response Time**: 
-- **Response Type**: 
-- **Feedback Received**: 
-- **Interview Conversion**: 
+- **Response Received**:
+- **Response Time**:
+- **Response Type**:
+- **Feedback Received**:
+- **Interview Conversion**:
 
 ## Project Tagging
-- **Project Type**: 
-- **Primary Focus**: 
-- **Business Value**: 
-- **Technical Category**: 
-- **Demonstration Goal**: 
+- **Project Type**:
+- **Primary Focus**:
+- **Business Value**:
+- **Technical Category**:
+- **Demonstration Goal**:
 ```
 
 ## Consistency Enforcement

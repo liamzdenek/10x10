@@ -4,64 +4,41 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 
 ## Project 1: Anima Application (Active Patient Follow-Up Alert Dashboard)
 
+### Project Overview
+- **Project Summary**: A lightweight web application that simulates an automated alert system for abnormal lab results with machine learning-based risk scoring.
+- **Project Value Proposition**: Reduces missed abnormal lab results through automated screening and risk prioritization, improving patient safety and clinical workflow.
+
 ### Company Information
 - **Company Name**: Anima
-- **Company Size**: [To be filled]
+- **Company Size**: 20 employees
 - **Industry**: Healthcare Technology
-- **Location**: [To be filled]
-- **Funding Stage**: [To be filled]
-- **Public/Private**: [To be filled]
+- **Location**: Remote (London, UK)
+- **Funding Stage**: Series B-ish
+- **Public/Private**: Private
 
 ### Position Details
-- **Title Sought**: [To be filled]
-- **Department**: [To be filled]
-- **Seniority Level**: [To be filled]
-- **Sent to Who**: [To be filled]
-- **Reporting Structure**: [To be filled]
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: CEO, CTO
 
 ### Project Execution
-- **Hours Spent**: [To be filled]
-- **Development Time**: [To be filled]
-- **Research Time**: [To be filled]
-- **Documentation Time**: [To be filled]
-- **Completion Date**: [To be filled]
+- **Hours Spent**: 6 hours
+- **Completion Date**: March 17, 2025
 - **Project Day**: 1
 
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, FastAPI (Python), scikit-learn
 - **Secondary Technologies**: Effector, TanStack Router, Pydantic, pandas, numpy
 - **Lines of Code**: [To be filled]
-- **Components Created**: [To be filled]
-- **APIs Integrated**: [To be filled]
-- **Testing Coverage**: [To be filled]
+- **Deployment Mechanism**: No deployment
 
 ### Resource Utilization
-- **LLM Dollars Spent**: [To be filled]
-- **Hosting Dollars Spent**: [To be filled]
-- **External Services Cost**: [To be filled]
-- **Free Tier Services**: [To be filled]
-- **Total Project Cost**: [To be filled]
-
-### Project Complexity
-- **Scope Complexity**: [To be filled]
-- **Technical Complexity**: [To be filled]
-- **Domain Complexity**: [To be filled]
-- **Integration Complexity**: [To be filled]
-- **Overall Complexity Score**: [To be filled]
+- **LLM Dollars Spent**: $13.94
+- **Hosting Dollars Spent**: $0
 
 ### Learning Metrics
-- **New Technologies Learned**: [To be filled]
-- **Skills Improved**: [To be filled]
-- **Key Challenges**: [To be filled]
-- **Problem-Solving Approaches**: [To be filled]
-- **Time to Proficiency**: [To be filled]
-
-### Outcome Metrics
-- **Project Completeness**: [To be filled]
-- **Core Features Implemented**: [To be filled]
-- **Stretch Goals Achieved**: [To be filled]
-- **Known Limitations**: [To be filled]
-- **Future Enhancements**: [To be filled]
+- **New Technologies Learned**: scikit-learn
+- **Skills Improved**: python
+- **Key Challenges**: Potential overfitting on synthetic data, limited feature engineering, no authentication mechanism, form UX with many test fields, limited mobile responsiveness
 
 ### Application Impact
 - **Response Received**: [To be filled]
@@ -79,64 +56,41 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 
 ## Project 2: Hiive Application (AI Market Sentiment Analyzer)
 
+### Project Overview
+- **Project Summary**: A demo application that showcases how Agentic AI can enhance Hiive's private market data insights through sentiment analysis.
+- **Project Value Proposition**: Bridges information asymmetry in private markets by analyzing sentiment across news, social media, and financial reports to provide deeper investment insights.
+
 ### Company Information
 - **Company Name**: Hiive
-- **Company Size**: [To be filled]
+- **Company Size**: 150 employees
 - **Industry**: Financial Technology
-- **Location**: [To be filled]
-- **Funding Stage**: [To be filled]
-- **Public/Private**: [To be filled]
+- **Location**: Remote (Vancouver, BC)
+- **Funding Stage**: Series A
+- **Public/Private**: Private
 
 ### Position Details
-- **Title Sought**: [To be filled]
-- **Department**: [To be filled]
-- **Seniority Level**: [To be filled]
-- **Sent to Who**: [To be filled]
-- **Reporting Structure**: [To be filled]
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: CPTO, CRO
 
 ### Project Execution
-- **Hours Spent**: [To be filled]
-- **Development Time**: [To be filled]
-- **Research Time**: [To be filled]
-- **Documentation Time**: [To be filled]
-- **Completion Date**: [To be filled]
+- **Hours Spent**: 7 hours
+- **Completion Date**: March 18, 2025
 - **Project Day**: 2
 
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, AWS Lambda, LangChain.js, AWS CDK
 - **Secondary Technologies**: Express, Node.js, S3, API Gateway, CloudFront
 - **Lines of Code**: [To be filled]
-- **Components Created**: [To be filled]
-- **APIs Integrated**: OpenRouter API, AWS Services
-- **Testing Coverage**: [To be filled]
+- **Deployment Mechanism**: AWS CDK
 
 ### Resource Utilization
-- **LLM Dollars Spent**: [To be filled]
-- **Hosting Dollars Spent**: [To be filled]
-- **External Services Cost**: [To be filled]
-- **Free Tier Services**: [To be filled]
-- **Total Project Cost**: [To be filled]
-
-### Project Complexity
-- **Scope Complexity**: [To be filled]
-- **Technical Complexity**: [To be filled]
-- **Domain Complexity**: [To be filled]
-- **Integration Complexity**: [To be filled]
-- **Overall Complexity Score**: [To be filled]
+- **LLM Dollars Spent**: $32.89
+- **Hosting Dollars Spent**: $0
 
 ### Learning Metrics
-- **New Technologies Learned**: [To be filled]
-- **Skills Improved**: [To be filled]
-- **Key Challenges**: [To be filled]
-- **Problem-Solving Approaches**: [To be filled]
-- **Time to Proficiency**: [To be filled]
-
-### Outcome Metrics
-- **Project Completeness**: [To be filled]
-- **Core Features Implemented**: [To be filled]
-- **Stretch Goals Achieved**: [To be filled]
-- **Known Limitations**: [To be filled]
-- **Future Enhancements**: [To be filled]
+- **New Technologies Learned**: None
+- **Skills Improved**: AWS CDK
+- **Key Challenges**: Tight time constraints (1-2 day timeline), LLM API performance and cost, API Gateway to Express integration complexity, Lambda bundling configuration issues
 
 ### Application Impact
 - **Response Received**: [To be filled]
@@ -160,24 +114,16 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Languages**: TypeScript (2), Python (1), JavaScript (1)
 - **Cloud Providers**: AWS (1)
 - **AI/ML Technologies**: scikit-learn (1), LangChain.js (1)
-
-### Complexity Averages
-- **Average Scope Complexity**: [To be calculated]
-- **Average Technical Complexity**: [To be calculated]
-- **Average Domain Complexity**: [To be calculated]
-- **Average Integration Complexity**: [To be calculated]
-- **Average Overall Complexity**: [To be calculated]
+- **Deployment Mechanisms**: None (1), AWS CDK (1)
 
 ### Resource Averages
-- **Average Hours Spent**: [To be calculated]
-- **Average LLM Dollars Spent**: [To be calculated]
-- **Average Hosting Dollars Spent**: [To be calculated]
-- **Average Total Project Cost**: [To be calculated]
+- **Average Hours Spent**: 6.5 hours
+- **Average LLM Dollars Spent**: $23.42
+- **Average Hosting Dollars Spent**: $0
 
 ### Outcome Statistics
 - **Response Rate**: [To be calculated]
 - **Interview Conversion Rate**: [To be calculated]
-- **Average Project Completeness**: [To be calculated]
 
 ### Project Type Distribution
 - **Web Applications**: 2
