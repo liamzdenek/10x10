@@ -19,6 +19,8 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 ### Position Details
 - **Title Sought**: Principal Software Engineer
 - **Sent to Who**: CEO, CTO
+- **Stated Base Salary**: Unknown
+- **Estimated Total Comp**: Unknown
 
 ### Project Execution
 - **Hours Spent**: 6 hours
@@ -71,6 +73,8 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 ### Position Details
 - **Title Sought**: Principal Software Engineer
 - **Sent to Who**: CPTO, CRO
+- **Stated Base Salary**: $225k-$275k
+- **Estimated Total Comp**: Unknown
 
 ### Project Execution
 - **Hours Spent**: 7 hours

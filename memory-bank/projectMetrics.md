@@ -19,6 +19,8 @@ This document defines the standardized metrics tracked for each project in the 1
 ### Position Details
 - **Title Sought**: Job title being applied for
 - **Sent to Who**: Titles of the recipients (not names)
+- **Stated Base Salary**: Stated base salary range for the position
+- **Estimated Total Comp**: Estimated total compensation including bonuses, equity, etc.
 
 ### Project Execution
 - **Hours Spent**: Total time invested in the project

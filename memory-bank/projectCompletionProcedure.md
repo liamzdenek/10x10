@@ -94,6 +94,8 @@ The following metrics must be collected for each project:
 - Location
 - Title Sought
 - Sent to Who (titles only)
+- Stated Base Salary
+- Estimated Total Comp
 
 ### Resource Metrics
 - Hours Spent (total)
@@ -140,6 +142,8 @@ The following metrics must be collected for each project:
 ## Position Details
 - **Title Sought**:
 - **Sent to Who**:
+- **Stated Base Salary**:
+- **Estimated Total Comp**:
 
 ## Project Execution
 - **Hours Spent**:
