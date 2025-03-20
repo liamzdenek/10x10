@@ -164,28 +164,82 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Technical Category**: FinTech
 - **Demonstration Goal**: Real-time Analytics, AWS Infrastructure
 
+## Project 4: SoFi Application (Experimentation Platform Accelerator)
+
+### Project Overview
+- **Project Summary**: A lightweight experimentation platform that enables rapid testing and validation of new features through A/B testing and data-driven insights.
+- **Project Value Proposition**: Accelerates innovation by providing a structured approach to testing and validation, reducing the technical overhead of implementing experiments.
+
+### Company Information
+- **Company Name**: SoFi
+- **Company Size**: Large (publicly traded company)
+- **Industry**: Financial Technology
+- **Location**: San Francisco, CA (with remote options)
+- **Funding Stage**: N/A (publicly traded)
+- **Public/Private**: Public
+
+### Position Details
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: CTO and EVP of the relevant division
+- **Stated Base Salary**: $192k - $330k
+- **Estimated Total Comp**: $628k - 945k
+
+### Project Execution
+- **Hours Spent**: 7
+- **Completion Date**: March 20, 2025
+- **Project Day**: 4
+
+### Technical Metrics
+- **Primary Technologies**: React, TypeScript, AWS Lambda, API Gateway, DynamoDB, S3, AWS Batch, AWS CDK
+- **Secondary Technologies**: Express, NX, CSS Modules, TanStack Router, Java, Dagger 2, Apache Commons Math
+- **Lines of Code**: [To be filled]
+- **Deployment Mechanism**: AWS CDK
+
+### Resource Utilization
+- **LLM Dollars Spent**: $45.27
+- **Hosting Dollars Spent**: $0
+
+### Learning Metrics
+- **New Technologies Learned**: AWS Batch, Dagger 2
+- **Skills Improved**: AWS CDK, Java
+- **Key Challenges**: AWS Batch connectivity issues, CloudFront configuration, DynamoDB query expressions, report generation bugs
+
+### Application Impact
+- **Response Received**: [To be filled]
+- **Response Time**: [To be filled]
+- **Response Type**: [To be filled]
+- **Feedback Received**: [To be filled]
+- **Interview Conversion**: [To be filled]
+
+### Project Tagging
+- **Project Type**: Web Application, Serverless
+- **Primary Focus**: Full Stack, Cloud Infrastructure
+- **Business Value**: Data-Driven Decisions, Innovation Acceleration
+- **Technical Category**: FinTech
+- **Demonstration Goal**: Cloud Architecture, AWS Integration
+
 ## Summary Metrics (Across All Projects)
 
 ### Technology Distribution
-- **Frontend Frameworks**: React (3)
-- **Backend Technologies**: FastAPI (1), AWS Lambda (2), DynamoDB (1)
-- **Languages**: TypeScript (3), Python (1), JavaScript (1)
-- **Cloud Providers**: AWS (2)
+- **Frontend Frameworks**: React (4)
+- **Backend Technologies**: FastAPI (1), AWS Lambda (3), DynamoDB (2), API Gateway (2)
+- **Languages**: TypeScript (4), Python (1), JavaScript (1), Java (1)
+- **Cloud Providers**: AWS (3)
 - **AI/ML Technologies**: scikit-learn (1), LangChain.js (1)
-- **Deployment Mechanisms**: None (1), AWS CDK (2)
+- **Deployment Mechanisms**: None (1), AWS CDK (3)
 
 ### Resource Averages
-- **Average Hours Spent**: 6.67 hours
-- **Average LLM Dollars Spent**: $23.93
+- **Average Hours Spent**: 6.75 hours
+- **Average LLM Dollars Spent**: $29.27
 - **Average Hosting Dollars Spent**: $0
 
 ### Outcome Statistics
-- **Response Rate**: [To be calculated]
+- **Response Rate**: 33.33% (1 out of 3 projects with known response status)
 - **Interview Conversion Rate**: [To be calculated]
 
 ### Project Type Distribution
-- **Web Applications**: 3
-- **Serverless Applications**: 2
+- **Web Applications**: 4
+- **Serverless Applications**: 3
 - **Machine Learning Applications**: 1
 - **Mobile Applications**: 0
 - **Desktop Applications**: 0
