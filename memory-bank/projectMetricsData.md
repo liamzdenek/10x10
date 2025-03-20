@@ -126,9 +126,9 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 
 ### Position Details
 - **Title Sought**: Principal Software Engineer
-- **Sent to Who**: [To be filled]
-- **Stated Base Salary**: [To be filled]
-- **Estimated Total Comp**: [To be filled]
+- **Sent to Who**: President, CPO, and SVP of Engineering (CTO vacancy)
+- **Stated Base Salary**: Unknown
+- **Estimated Total Comp**: >$500k
 
 ### Project Execution
 - **Hours Spent**: 7 hours
@@ -151,10 +151,10 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Key Challenges**: Cold start latency, DynamoDB stream processing, real-time updates, cross-package dependencies, one-day timeline, demo data creation, error handling
 
 ### Application Impact
-- **Response Received**: [To be filled]
-- **Response Time**: [To be filled]
-- **Response Type**: [To be filled]
-- **Feedback Received**: [To be filled]
+- **Response Received**: Yes
+- **Response Time**: 4 hours
+- **Response Type**: Referred to recruiting
+- **Feedback Received**: "Very cool"
 - **Interview Conversion**: [To be filled]
 
 ### Project Tagging
