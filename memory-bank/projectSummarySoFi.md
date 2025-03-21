@@ -146,6 +146,53 @@ With more time, the project could be enhanced with:
 - **New Technologies Learned**: AWS Batch, Dagger 2
 - **Skills Improved**: AWS CDK, Java
 
+## Retrospective Insights
+
+### Developer's Reflections
+
+I think this project pushed the boundaries of scope, in both a good and bad way. I think I demonstrated a lot by tackling a very large scope for just 1 day. But, I think it was barely achievable in a single day. This is a bit risky I think, since I don't want to fail and overflow the day too much.
+
+I tried to use Java for the reporting generator, which was bold because it's been a few years since I've had to write java, and it added about two hours of work. I don't know if it was a good return on investment for the amount of effort vs the amount of uniqueness.
+
+I learned that the tech doesn't matter so much. I put the demo before the technical explanation, which I think is the right form going forward, so I'm going to keep doing it. I'm also going to try to mirror an executive communication style going forward. I read thru a bunch of twitter.com/TechEmails last night, and they manage to say a lot with very little, sometimes incomplete sentences. Their communication is direct and scoped, but brief, and I think it would benefit me to mirror that.
+
+### Structured Retrospective
+
+1. **What went well with this project?**
+   - Successfully implemented a complex architecture with multiple AWS services
+   - Created a working end-to-end experimentation platform with real-time variant assignment
+   - Integrated Java and TypeScript components in a cohesive system
+   - Demonstrated a practical application of A/B testing with statistical analysis
+   - Completed an ambitious scope within the one-day timeframe
+
+2. **What challenges did you face and how did you overcome them?**
+   - AWS Batch connectivity issues required careful configuration of network settings
+   - Java integration added complexity and development time
+   - CloudFront configuration issues needed troubleshooting and simplification
+   - DynamoDB query expressions in Java required refactoring and annotation adjustments
+   - The ambitious scope pushed the boundaries of what could be achieved in one day
+
+3. **What would you do differently if you had more time?**
+   - Reconsider the use of Java for the report generator, possibly using TypeScript instead
+   - Implement more sophisticated statistical analysis methods
+   - Add user segmentation capabilities for more targeted experiments
+   - Create a more polished user interface with better visualizations
+   - Implement integration with existing analytics platforms
+
+4. **What key learnings will you apply to future projects?**
+   - Focus on demo-first approach before technical explanations
+   - Adopt a more executive communication style - direct, scoped, and brief
+   - Be cautious about introducing additional languages/technologies that add significant development time
+   - Balance ambition with achievability within time constraints
+   - Prioritize features that demonstrate value over technical complexity
+
+5. **How did this project differ from previous ones in the series?**
+   - More complex architecture with multiple AWS services working together
+   - Introduction of Java alongside TypeScript for a multi-language implementation
+   - Focus on data-driven decision making rather than direct user functionality
+   - More emphasis on statistical analysis and reporting
+   - Pushed the boundaries of scope compared to previous projects
+
 ## Conclusion
 
 The SoFi Experimentation Platform Accelerator successfully demonstrates how a lightweight, cloud-native experimentation platform can enable rapid testing and validation of new features. By providing a standardized framework for A/B testing with comprehensive reporting, the platform accelerates the feedback loop between idea and implementation, enabling more data-driven decision making. The project showcases a modern, serverless architecture with a focus on scalability, maintainability, and developer experience, highlighting both technical expertise and business value alignment.
