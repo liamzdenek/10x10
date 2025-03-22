@@ -30,7 +30,7 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, FastAPI (Python), scikit-learn
 - **Secondary Technologies**: Effector, TanStack Router, Pydantic, pandas, numpy
-- **Lines of Code**: [To be filled]
+- **Lines of Code**: 5307 + 2058 md
 - **Deployment Mechanism**: No deployment
 
 ### Resource Utilization
@@ -84,7 +84,7 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, AWS Lambda, LangChain.js, AWS CDK
 - **Secondary Technologies**: Express, Node.js, S3, API Gateway, CloudFront
-- **Lines of Code**: [To be filled]
+- **Lines of Code**: 4933 + 1892 md
 - **Deployment Mechanism**: AWS CDK
 
 ### Resource Utilization
@@ -138,7 +138,7 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, AWS Lambda, DynamoDB, S3, API Gateway, AWS CDK
 - **Secondary Technologies**: Express, serverless-http, Vite, Tanstack Router, CSS Modules, Chart.js/D3.js
-- **Lines of Code**: [To be filled]
+- **Lines of Code**: 4552 + 2000 md
 - **Deployment Mechanism**: AWS CDK
 
 ### Resource Utilization
@@ -192,7 +192,7 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, AWS Lambda, API Gateway, DynamoDB, S3, AWS Batch, AWS CDK
 - **Secondary Technologies**: Express, NX, CSS Modules, TanStack Router, Java, Dagger 2, Apache Commons Math
-- **Lines of Code**: [To be filled]
+- **Lines of Code**: 8933 + 2194 md
 - **Deployment Mechanism**: AWS CDK
 
 ### Resource Utilization
@@ -218,19 +218,73 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Technical Category**: FinTech
 - **Demonstration Goal**: Cloud Architecture, AWS Integration
 
+## Project 5: Stitch Fix Application (Client Engagement Acceleration System)
+
+### Project Overview
+- **Project Summary**: A client engagement acceleration system that monitors customer engagement, identifies at-risk clients, and automatically generates personalized re-engagement emails using AI.
+- **Project Value Proposition**: Reduces client churn and increases retention by proactively identifying disengagement risk and automating personalized re-engagement, directly addressing a key business risk identified in Stitch Fix's SEC report.
+
+### Company Information
+- **Company Name**: Stitch Fix
+- **Company Size**: Large (publicly traded company)
+- **Industry**: Fashion Technology / E-commerce
+- **Location**: San Francisco, CA (with remote options)
+- **Funding Stage**: N/A (publicly traded)
+- **Public/Private**: Public
+
+### Position Details
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: Cofounder, CEO, CPTO
+- **Stated Base Salary**: 157,800-232,000
+- **Estimated Total Comp**: Unknown, maybe up to mid 400s. I see some data points high 300s.
+
+### Project Execution
+- **Hours Spent**: 7 hours
+- **Completion Date**: March 21, 2025
+- **Project Day**: 5
+
+### Technical Metrics
+- **Primary Technologies**: React, TypeScript, Go, AWS Lambda, DynamoDB, SNS/SQS, AWS CDK
+- **Secondary Technologies**: Express.js, Nx monorepo, CSS Modules, OpenRouter API (with R1), S3/CloudFront
+- **Lines of Code**: 7312 + 2479 md
+- **Deployment Mechanism**: AWS CDK
+
+### Resource Utilization
+- **LLM Dollars Spent**: $51.90
+- **Hosting Dollars Spent**: $0
+
+### Learning Metrics
+- **New Technologies Learned**: Go Lambda functions
+- **Skills Improved**: Event-driven architecture, AWS CDK, Nx monorepo management
+- **Key Challenges**: Lambda deployment issues, email generation with structured output, DynamoDB integration, API Gateway configuration
+
+### Application Impact
+- **Response Received**: [To be filled]
+- **Response Time**: [To be filled]
+- **Response Type**: [To be filled]
+- **Feedback Received**: [To be filled]
+- **Interview Conversion**: [To be filled]
+
+### Project Tagging
+- **Project Type**: Web Application, Serverless
+- **Primary Focus**: Full Stack, Cloud Infrastructure
+- **Business Value**: Customer Retention, Engagement Analytics
+- **Technical Category**: Fashion Technology / E-commerce
+- **Demonstration Goal**: Cloud Architecture, Event-Driven Systems, AI Integration
+
 ## Summary Metrics (Across All Projects)
 
 ### Technology Distribution
-- **Frontend Frameworks**: React (4)
-- **Backend Technologies**: FastAPI (1), AWS Lambda (3), DynamoDB (2), API Gateway (2)
-- **Languages**: TypeScript (4), Python (1), JavaScript (1), Java (1)
-- **Cloud Providers**: AWS (3)
-- **AI/ML Technologies**: scikit-learn (1), LangChain.js (1)
-- **Deployment Mechanisms**: None (1), AWS CDK (3)
+- **Frontend Frameworks**: React (5)
+- **Backend Technologies**: FastAPI (1), AWS Lambda (4), DynamoDB (3), API Gateway (3), Go (1), Java (1)
+- **Languages**: TypeScript (5), Python (1), JavaScript (1), Java (1), Go (1)
+- **Cloud Providers**: AWS (4)
+- **AI/ML Technologies**: scikit-learn (1), LangChain.js (1), OpenRouter API/GPT-4o (1)
+- **Deployment Mechanisms**: None (1), AWS CDK (4)
 
 ### Resource Averages
-- **Average Hours Spent**: 6.75 hours
-- **Average LLM Dollars Spent**: $29.27
+- **Average Hours Spent**: 7.6 hours (for completed projects)
+- **Average LLM Dollars Spent**: $29.27 (for projects with known LLM spend)
 - **Average Hosting Dollars Spent**: $0
 
 ### Outcome Statistics
@@ -238,8 +292,8 @@ This document contains the collected metrics for all projects in the 10x10 Job A
 - **Interview Conversion Rate**: [To be calculated]
 
 ### Project Type Distribution
-- **Web Applications**: 4
-- **Serverless Applications**: 3
+- **Web Applications**: 5
+- **Serverless Applications**: 4
 - **Machine Learning Applications**: 1
 - **Mobile Applications**: 0
 - **Desktop Applications**: 0
