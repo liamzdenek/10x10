@@ -1,14 +1,66 @@
-# Project Summary: Anima Active Patient Follow-Up Alert Dashboard
+# Anima Active Patient Follow-Up Alert Dashboard
 
-## Project Overview
+## Project Metrics
 
-The Active Patient Follow-Up Alert Dashboard is a lightweight web application that simulates an automated alert system for abnormal lab results. The dashboard displays a list of patients flagged for follow-up, with risk scores derived from a machine learning model that can be refined through user feedback—implementing an active learning loop.
+### Project Overview
+- **Project Summary**: A lightweight web application that simulates an automated alert system for abnormal lab results with machine learning-based risk scoring.
+- **Project Value Proposition**: Reduces missed abnormal lab results through automated screening and risk prioritization, improving patient safety and clinical workflow.
 
-## Target Company
+### Company Information
+- **Company Name**: Anima
+- **Company Size**: 20 employees
+- **Industry**: Healthcare Technology
+- **Location**: Remote (London, UK)
+- **Funding Stage**: Series B-ish
+- **Public/Private**: Private
+
+### Position Details
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: CEO, CTO
+- **Stated Base Salary**: Unknown
+- **Estimated Total Comp**: Unknown
+
+### Project Execution
+- **Hours Spent**: 6 hours
+- **Completion Date**: March 17, 2025
+- **Project Day**: 1
+
+### Technical Metrics
+- **Primary Technologies**: React, TypeScript, FastAPI (Python), scikit-learn
+- **Secondary Technologies**: Effector, TanStack Router, Pydantic, pandas, numpy
+- **Lines of Code**: 5307 + 2058 md
+- **Deployment Mechanism**: No deployment
+
+### Resource Utilization
+- **LLM Dollars Spent**: $13.94
+- **Hosting Dollars Spent**: $0
+
+### Learning Metrics
+- **New Technologies Learned**: scikit-learn
+- **Skills Improved**: python
+- **Key Challenges**: Potential overfitting on synthetic data, limited feature engineering, no authentication mechanism, form UX with many test fields, limited mobile responsiveness
+
+### Application Impact
+- **Response Received**: [To be filled]
+- **Response Time**: [To be filled]
+- **Response Type**: [To be filled]
+- **Feedback Received**: [To be filled]
+- **Interview Conversion**: [To be filled]
+
+### Project Tagging
+- **Project Type**: Web Application
+- **Primary Focus**: Full Stack
+- **Business Value**: Patient Safety, Clinical Decision Support
+- **Technical Category**: Healthcare
+- **Demonstration Goal**: ML Integration, Clinical Safety
+
+## Project Summary
+
+### Target Company
 
 **Anima** - A healthcare technology startup with approximately 20 employees based in London, UK (remote). The company is at the Series B funding stage and focuses on improving patient safety and clinical workflows through innovative technology solutions.
 
-## Core Problem Addressed
+### Core Problem Addressed
 
 In healthcare settings, abnormal lab results that don't receive timely follow-up can lead to serious patient harm, delayed diagnoses, and missed treatment opportunities. Studies have shown that up to 7% of abnormal test results are never followed up on, creating significant patient safety risks. This problem is exacerbated by:
 
@@ -17,22 +69,7 @@ In healthcare settings, abnormal lab results that don't receive timely follow-up
 3. **Complex Interpretation**: Some abnormalities are only apparent when considering multiple test values together or in the context of a patient's history
 4. **Manual Workflows**: Many healthcare systems rely on manual review of test results, which is time-consuming and error-prone
 
-## Key Technologies Used
-
-### Primary Technologies
-- React with TypeScript
-- FastAPI (Python)
-- scikit-learn for machine learning
-- Vite as the build tool
-
-### Secondary Technologies
-- Effector for state management
-- TanStack Router for routing
-- Pydantic for data validation
-- pandas and numpy for data processing
-- matplotlib and seaborn for visualization
-
-## Major Features Implemented
+### Major Features Implemented
 
 1. **Abnormal Lab Result Detection**
    - Identifies patients with abnormal blood test results that require clinical follow-up
@@ -58,7 +95,7 @@ In healthcare settings, abnormal lab results that don't receive timely follow-up
    - Applies reference ranges based on demographics
    - Flags abnormalities based on reference ranges
 
-## Architecture Highlights
+### Architecture Highlights
 
 1. **Modular, Multi-tier Architecture**
    - Clear separation of concerns between data, ML, API, and UI layers
@@ -83,7 +120,7 @@ In healthcare settings, abnormal lab results that don't receive timely follow-up
    - Support for single and batch predictions
    - Health check and model information endpoints
 
-## Notable Challenges and Solutions
+### Notable Challenges and Solutions
 
 1. **Challenge**: Synthetic data may not capture all real-world patterns
    **Solution**: Enhanced data simulator with more complex abnormality patterns and demographic-specific reference ranges
@@ -100,7 +137,7 @@ In healthcare settings, abnormal lab results that don't receive timely follow-up
 5. **Challenge**: Limited mobile responsiveness
    **Solution**: Enhanced responsive design for better usability on smaller screens
 
-## Key Learnings and Insights
+### Key Learnings and Insights
 
 1. **Clinical Safety Priority**: In healthcare applications, minimizing false negatives (missed abnormal results) is often more important than reducing false positives.
 
@@ -112,7 +149,7 @@ In healthcare settings, abnormal lab results that don't receive timely follow-up
 
 5. **UI/UX Balance**: Healthcare applications must balance comprehensive data collection with usability to be effective in clinical settings.
 
-## Future Opportunities
+### Future Opportunities
 
 With more time, the project could be enhanced with:
 
@@ -122,20 +159,12 @@ With more time, the project could be enhanced with:
 4. **Historical Trend Analysis**: Visualization of patient test results over time
 5. **Comprehensive Audit Trail**: Full audit trail for clinical decision support
 
-## Project Metrics
-
-- **Hours Spent**: 6 hours
-- **Completion Date**: March 17, 2025
-- **Project Day**: 1 of 10
-- **LLM Dollars Spent**: $13.94
-- **New Technologies Learned**: scikit-learn
-- **Skills Improved**: Python
-- **Model Performance**: 
-  - Accuracy: 0.87 (test set)
-  - ROC AUC: 0.92 (test set)
-  - Sensitivity: 0.95 (validation set)
-  - Specificity: 0.75 (validation set)
-  - F1 Score: 0.84 (test set)
+### Model Performance
+- Accuracy: 0.87 (test set)
+- ROC AUC: 0.92 (test set)
+- Sensitivity: 0.95 (validation set)
+- Specificity: 0.75 (validation set)
+- F1 Score: 0.84 (test set)
 
 ## Conclusion
 

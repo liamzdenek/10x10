@@ -1,14 +1,66 @@
-# Project Summary: Hiive AI Market Sentiment Analyzer
+# Hiive AI Market Sentiment Analyzer
 
-## Project Overview
+## Project Metrics
 
-The Hiive AI Market Sentiment Analyzer is a demo application that showcases how Agentic AI can enhance Hiive's private market data insights. The application analyzes market sentiment for pre-IPO companies by processing news articles, social media, and financial reports to provide Hiive users with deeper insights into potential investments.
+### Project Overview
+- **Project Summary**: A demo application that showcases how Agentic AI can enhance Hiive's private market data insights through sentiment analysis.
+- **Project Value Proposition**: Bridges information asymmetry in private markets by analyzing sentiment across news, social media, and financial reports to provide deeper investment insights.
 
-## Target Company
+### Company Information
+- **Company Name**: Hiive
+- **Company Size**: 150 employees
+- **Industry**: Financial Technology
+- **Location**: Remote (Vancouver, BC)
+- **Funding Stage**: Series A
+- **Public/Private**: Private
+
+### Position Details
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: CPTO, CRO
+- **Stated Base Salary**: $225k-$275k
+- **Estimated Total Comp**: Unknown
+
+### Project Execution
+- **Hours Spent**: 7 hours
+- **Completion Date**: March 18, 2025
+- **Project Day**: 2
+
+### Technical Metrics
+- **Primary Technologies**: React, TypeScript, AWS Lambda, LangChain.js, AWS CDK
+- **Secondary Technologies**: Express, Node.js, S3, API Gateway, CloudFront
+- **Lines of Code**: 4933 + 1892 md
+- **Deployment Mechanism**: AWS CDK
+
+### Resource Utilization
+- **LLM Dollars Spent**: $32.89
+- **Hosting Dollars Spent**: $0
+
+### Learning Metrics
+- **New Technologies Learned**: None
+- **Skills Improved**: AWS CDK
+- **Key Challenges**: Tight time constraints (1-2 day timeline), LLM API performance and cost, API Gateway to Express integration complexity, Lambda bundling configuration issues
+
+### Application Impact
+- **Response Received**: [To be filled]
+- **Response Time**: [To be filled]
+- **Response Type**: [To be filled]
+- **Feedback Received**: [To be filled]
+- **Interview Conversion**: [To be filled]
+
+### Project Tagging
+- **Project Type**: Web Application, Serverless
+- **Primary Focus**: Full Stack, Cloud Infrastructure
+- **Business Value**: Market Intelligence, Investment Decision Support
+- **Technical Category**: FinTech
+- **Demonstration Goal**: AI Integration, Infrastructure as Code
+
+## Project Summary
+
+### Target Company
 
 **Hiive** - A financial technology company with approximately 150 employees based in Vancouver, BC (remote). Hiive operates a marketplace for private stock, currently at Series A funding stage. The company focuses on making private markets more transparent and accessible.
 
-## Core Problem Addressed
+### Core Problem Addressed
 
 In private stock marketplaces, information asymmetry is a significant challenge. Unlike public markets with standardized disclosures, private market participants often lack comprehensive data to make informed decisions. This project aims to bridge this information gap by:
 
@@ -17,23 +69,7 @@ In private stock marketplaces, information asymmetry is a significant challenge.
 3. **Providing Context Beyond Pricing**: Adding sentiment analysis to complement existing price discovery tools
 4. **Identifying Trends and Patterns**: Detecting sentiment shifts that might indicate changing market conditions
 
-## Key Technologies Used
-
-### Primary Technologies
-- React with TypeScript
-- AWS Lambda with Node.js
-- LangChain.js for AI agent workflows
-- AWS CDK for infrastructure as code
-- S3 for article storage and static website hosting
-
-### Secondary Technologies
-- Express with serverless-http adapter
-- Node.js CLI with Commander.js
-- API Gateway for REST endpoints
-- CloudFront for content delivery
-- OpenRouter API for LLM access (meta-llama/llama-3.1-70b-instruct model)
-
-## Major Features Implemented
+### Major Features Implemented
 
 1. **Sentiment Analysis Dashboard**
    - Interactive visualization of sentiment trends
@@ -45,7 +81,7 @@ In private stock marketplaces, information asymmetry is a significant challenge.
    - Article sentiment analysis agent
    - Agent orchestrator for coordinating analysis tasks
    - LLM integration via OpenRouter API
-
+   
 3. **Article Submission System**
    - Web interface for uploading articles
    - Desktop CLI for batch article submission
@@ -61,7 +97,7 @@ In private stock marketplaces, information asymmetry is a significant challenge.
    - Automated deployment process
    - Secure configuration management
 
-## Architecture Highlights
+### Architecture Highlights
 
 1. **Serverless Architecture**
    - AWS Lambda functions for all backend processing
@@ -88,7 +124,7 @@ In private stock marketplaces, information asymmetry is a significant challenge.
    - Consistent language across application and infrastructure
    - Repeatable, version-controlled deployments
 
-## Notable Challenges and Solutions
+### Notable Challenges and Solutions
 
 1. **Challenge**: Time constraint of 1-2 day implementation window
    **Solution**: Focused scope on core functionality, leveraged existing libraries, and implemented mock data where appropriate
@@ -105,7 +141,7 @@ In private stock marketplaces, information asymmetry is a significant challenge.
 5. **Challenge**: Creating compelling demo data
    **Solution**: Developed realistic synthetic data that showcases the potential of the application
 
-## Key Learnings and Insights
+### Key Learnings and Insights
 
 1. **Serverless Architecture**: AWS Lambda with Express adapter provides a flexible, cost-effective solution for backend development that scales automatically.
 
@@ -117,7 +153,7 @@ In private stock marketplaces, information asymmetry is a significant challenge.
 
 5. **Nx Monorepo Structure**: Organizing code in a monorepo with clear package boundaries improves maintainability and enables code sharing.
 
-## Future Opportunities
+### Future Opportunities
 
 With more time, the project could be enhanced with:
 
@@ -126,16 +162,6 @@ With more time, the project could be enhanced with:
 3. **User Authentication**: Add user management and personalized insights
 4. **Predictive Analytics**: Forecast sentiment trends based on historical data
 5. **Competitive Analysis**: Compare sentiment across companies in the same sector
-
-## Project Metrics
-
-- **Hours Spent**: 7 hours
-- **Completion Date**: March 18, 2025
-- **Project Day**: 2 of 10
-- **LLM Dollars Spent**: $32.89
-- **New Technologies Learned**: None
-- **Skills Improved**: AWS CDK
-- **Key Challenges**: Tight time constraints (1-2 day timeline), LLM API performance and cost, API Gateway to Express integration complexity, Lambda bundling configuration issues
 
 ## Conclusion
 

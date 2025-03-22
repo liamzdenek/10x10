@@ -1,14 +1,66 @@
-# Project Summary: SoFi Experimentation Platform Accelerator
+# SoFi Experimentation Platform Accelerator
 
-## Project Overview
+## Project Metrics
 
-The SoFi Experimentation Platform Accelerator is a lightweight experimentation platform that enables rapid testing and validation of new features through A/B testing and data-driven insights. The platform provides a framework for data-driven decision making, allowing organizations to quickly test hypotheses and make informed product decisions.
+### Project Overview
+- **Project Summary**: A lightweight experimentation platform that enables rapid testing and validation of new features through A/B testing and data-driven insights.
+- **Project Value Proposition**: Accelerates innovation by providing a structured approach to testing and validation, reducing the technical overhead of implementing experiments.
 
-## Target Company
+### Company Information
+- **Company Name**: SoFi
+- **Company Size**: Large (publicly traded company)
+- **Industry**: Financial Technology
+- **Location**: San Francisco, CA (with remote options)
+- **Funding Stage**: N/A (publicly traded)
+- **Public/Private**: Public
+
+### Position Details
+- **Title Sought**: Principal Software Engineer
+- **Sent to Who**: CTO and EVP of the relevant division
+- **Stated Base Salary**: $192k - $330k
+- **Estimated Total Comp**: $628k - 945k
+
+### Project Execution
+- **Hours Spent**: 7
+- **Completion Date**: March 20, 2025
+- **Project Day**: 4
+
+### Technical Metrics
+- **Primary Technologies**: React, TypeScript, AWS Lambda, API Gateway, DynamoDB, S3, AWS Batch, AWS CDK
+- **Secondary Technologies**: Express, NX, CSS Modules, TanStack Router, Java, Dagger 2, Apache Commons Math
+- **Lines of Code**: 8933 + 2194 md
+- **Deployment Mechanism**: AWS CDK
+
+### Resource Utilization
+- **LLM Dollars Spent**: $45.27
+- **Hosting Dollars Spent**: $0
+
+### Learning Metrics
+- **New Technologies Learned**: AWS Batch, Dagger 2
+- **Skills Improved**: AWS CDK, Java
+- **Key Challenges**: AWS Batch connectivity issues, CloudFront configuration, DynamoDB query expressions, report generation bugs
+
+### Application Impact
+- **Response Received**: [To be filled]
+- **Response Time**: [To be filled]
+- **Response Type**: [To be filled]
+- **Feedback Received**: [To be filled]
+- **Interview Conversion**: [To be filled]
+
+### Project Tagging
+- **Project Type**: Web Application, Serverless
+- **Primary Focus**: Full Stack, Cloud Infrastructure
+- **Business Value**: Data-Driven Decisions, Innovation Acceleration
+- **Technical Category**: FinTech
+- **Demonstration Goal**: Cloud Architecture, AWS Integration
+
+## Project Summary
+
+### Target Company
 
 **SoFi** - A publicly traded financial technology company based in San Francisco, CA (with remote options). SoFi (Social Finance) offers a range of financial products including student loan refinancing, mortgages, personal loans, credit cards, investing, and banking through both mobile and desktop interfaces.
 
-## Core Problem Addressed
+### Core Problem Addressed
 
 In modern organizations, particularly in the fintech space, the ability to rapidly test and validate new features is critical for maintaining competitive advantage. However, implementing experimentation often involves significant technical overhead and complexity. The key challenges include:
 
@@ -20,27 +72,7 @@ In modern organizations, particularly in the fintech space, the ability to rapid
 
 The Experimentation Platform Accelerator addresses these challenges by providing a streamlined, standardized approach to experimentation.
 
-## Key Technologies Used
-
-### Primary Technologies
-- React with TypeScript
-- AWS Lambda
-- Amazon API Gateway
-- Amazon DynamoDB
-- Amazon S3
-- AWS Batch
-- AWS CDK (Infrastructure as Code)
-
-### Secondary Technologies
-- Express with serverless-http
-- NX monorepo
-- CSS Modules
-- TanStack Router
-- Java (for report generation)
-- Dagger 2 (dependency injection)
-- Apache Commons Math (statistical analysis)
-
-## Major Features Implemented
+### Major Features Implemented
 
 1. **Experiment Management Interface**
    - Create and configure A/B tests with multiple variants
@@ -72,7 +104,7 @@ The Experimentation Platform Accelerator addresses these challenges by providing
    - Calculates improvement percentages compared to control
    - Indicates statistical significance of results
 
-## Architecture Highlights
+### Architecture Highlights
 
 1. **Modular Monorepo Structure**
    - NX monorepo with clear separation of concerns
@@ -98,7 +130,7 @@ The Experimentation Platform Accelerator addresses these challenges by providing
    - Automated deployment process with NX commands
    - Docker image building and deployment for report generator
 
-## Notable Challenges and Solutions
+### Notable Challenges and Solutions
 
 1. **Challenge**: AWS Batch connectivity issues
    **Solution**: Added public IP assignment to Fargate tasks, created security group with outbound internet access, and granted ECR pull permissions to task execution role
@@ -115,7 +147,7 @@ The Experimentation Platform Accelerator addresses these challenges by providing
 5. **Challenge**: AWS Batch resource updates
    **Solution**: Created new AWS Batch resources with versioned names to avoid conflicts with immutable properties
 
-## Key Learnings and Insights
+### Key Learnings and Insights
 
 1. **NX Monorepo Structure**: The NX monorepo structure provides a clean separation of concerns while enabling code sharing, though it requires careful configuration to avoid nested directories.
 
@@ -127,7 +159,7 @@ The Experimentation Platform Accelerator addresses these challenges by providing
 
 5. **Dependency Injection**: Using Dagger 2 for dependency injection in Java components improves testability and maintainability by decoupling component creation from usage.
 
-## Future Opportunities
+### Future Opportunities
 
 With more time, the project could be enhanced with:
 
@@ -136,15 +168,6 @@ With more time, the project could be enhanced with:
 3. **Multi-variate Testing**: Extend the platform to support testing multiple variables simultaneously
 4. **Integration with Analytics Tools**: Connect with existing analytics platforms for deeper insights
 5. **Automated Experiment Suggestions**: Use machine learning to suggest promising experiment ideas
-
-## Project Metrics
-
-- **Hours Spent**: 7 hours
-- **Completion Date**: March 20, 2025
-- **Project Day**: 4 of 10
-- **LLM Dollars Spent**: $45.27
-- **New Technologies Learned**: AWS Batch, Dagger 2
-- **Skills Improved**: AWS CDK, Java
 
 ## Retrospective Insights
 
