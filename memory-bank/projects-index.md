@@ -44,26 +44,30 @@ This document provides a quick reference to all projects in the 10x10 Job Applic
 - **Business Value**: Customer Retention, Engagement Analytics
 - **File**: [project-StitchFix.md](./project-StitchFix.md)
 
+### 6. Sourcegraph - Cody Batch Autonomous Repository Remediation
+- **Completion Date**: March 24, 2025
+- **Project Day**: 6
+- **Core Technology**: React, TypeScript, Node.js, AWS Lambda, AWS Batch, DynamoDB, AWS CDK
+- **Project Type**: Web Application, Serverless
+- **Business Value**: Developer Productivity, Code Maintenance
+- **File**: [project-Sourcegraph.md](./project-Sourcegraph.md)
+
 ## Upcoming Projects
 
-### 6. TBD
-- **Target Date**: March 22-23, 2025
-- **Project Day**: 6
-
 ### 7. TBD
-- **Target Date**: March 24-25, 2025
+- **Target Date**: March 25-26, 2025
 - **Project Day**: 7
 
 ### 8. TBD
-- **Target Date**: March 26-27, 2025
+- **Target Date**: March 27-28, 2025
 - **Project Day**: 8
 
 ### 9. TBD
-- **Target Date**: March 28-29, 2025
+- **Target Date**: March 29-30, 2025
 - **Project Day**: 9
 
 ### 10. TBD
-- **Target Date**: March 30-31, 2025
+- **Target Date**: March 31, 2025
 - **Project Day**: 10
 
 ## Key Portfolio Documents

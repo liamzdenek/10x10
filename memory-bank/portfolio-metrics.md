@@ -5,16 +5,16 @@ This document contains summary metrics and cross-project analysis for the 10x10 
 ## Summary Metrics (Across All Projects)
 
 ### Technology Distribution
-- **Frontend Frameworks**: React (5)
-- **Backend Technologies**: FastAPI (1), AWS Lambda (4), DynamoDB (3), API Gateway (3), Go (1), Java (1)
-- **Languages**: TypeScript (5), Python (1), JavaScript (1), Java (1), Go (1)
-- **Cloud Providers**: AWS (4)
-- **AI/ML Technologies**: scikit-learn (1), LangChain.js (1), OpenRouter API/GPT-4o (1)
-- **Deployment Mechanisms**: None (1), AWS CDK (4)
+- **Frontend Frameworks**: React (6)
+- **Backend Technologies**: FastAPI (1), AWS Lambda (5), DynamoDB (4), API Gateway (4), Go (1), AWS Batch (2)
+- **Languages**: TypeScript (6), Python (1), JavaScript (1), Go (1), Node.js (1)
+- **Cloud Providers**: AWS (5)
+- **AI/ML Technologies**: scikit-learn (1), LangChain.js (1), OpenRouter API/GPT-4o (1), Claude 3.7 API (1)
+- **Deployment Mechanisms**: None (1), AWS CDK (5)
 
 ### Resource Averages
-- **Average Hours Spent**: 7.6 hours (for completed projects)
-- **Average LLM Dollars Spent**: $29.27 (for projects with known LLM spend)
+- **Average Hours Spent**: 8.0 hours (for completed projects)
+- **Average LLM Dollars Spent**: $34.39 (for projects with known LLM spend)
 - **Average Hosting Dollars Spent**: $0
 
 ### Outcome Statistics
@@ -22,16 +22,16 @@ This document contains summary metrics and cross-project analysis for the 10x10 
 - **Interview Conversion Rate**: [To be calculated]
 
 ### Project Type Distribution
-- **Web Applications**: 5
-- **Serverless Applications**: 4
+- **Web Applications**: 6
+- **Serverless Applications**: 5
 - **Machine Learning Applications**: 1
 - **Mobile Applications**: 0
 - **Desktop Applications**: 0
 - **API/Backend Services**: 0
 
 ## Project Completion Status
-- **Projects Completed**: 5/10 (50%)
-- **Days Elapsed**: 5/10 (50%)
+- **Projects Completed**: 6/10 (60%)
+- **Days Elapsed**: 6/10 (60%)
 - **Current Status**: On track
 
 ## Key Patterns and Trends
