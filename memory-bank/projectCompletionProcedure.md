@@ -27,7 +27,8 @@ The procedure is initiated when the user states: **"I've finished a project"** a
 - For each metric defined in projectMetrics.md:
   - Check if the information is available in the memory bank
   - If not available, explicitly ask for the missing information
-  - Record all metrics in a standardized format
+  - Record all metrics directly in the project summary file (project-[CompanyName].md)
+  - Do not create separate projectMetrics-[CompanyName].md files
 
 ### 3. Project Summary Creation
 

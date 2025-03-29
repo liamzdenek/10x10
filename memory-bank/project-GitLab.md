@@ -15,24 +15,24 @@
 - **Public/Private**: Public (NASDAQ: GTLB)
 
 ### Position Details
-- **Title Sought**: Principal Engineer, Group Tenant Scale
-- **Sent to Who**: Engineering Leadership, Hiring Manager
-- **Stated Base Salary**: $180,000 - $240,000
-- **Estimated Total Comp**: $300,000 - $400,000
+- **Title Sought**: Principal Engineer
+- **Sent to Who**: CPO, CTO, Founder
+- **Stated Base Salary**: Unknown
+- **Estimated Total Comp**: Unknown
 
 ### Project Execution
 - **Hours Spent**: 8 hours
-- **Completion Date**: March 29, 2025
-- **Project Day**: Day 8 of 10x10 Challenge
+- **Completion Date**: March 26, 2025
+- **Project Day**: Day 8
 
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, AWS Lambda, DynamoDB, Claude API
 - **Secondary Technologies**: NX Monorepo, Express.js, AWS CDK, TanStack Router, TanStack Query
-- **Lines of Code**: ~4,500
+- **Lines of Code**: 6134 + 3349 markdown
 - **Deployment Mechanism**: AWS CDK with CloudFront, S3, API Gateway, and Lambda
 
 ### Resource Utilization
-- **LLM Dollars Spent**: $45.00 (estimated)
+- **LLM Dollars Spent**: $52.82
 - **Hosting Dollars Spent**: $0 (AWS free tier)
 
 ### Learning Metrics
@@ -70,7 +70,7 @@ The GitLab AI PR Agent is an AI-powered tool that enables developers to create o
 - **Industry**: Developer Tools / DevOps
 - **Type**: Public company (NASDAQ: GTLB)
 - **Location**: Remote-first
-- **Position Applied For**: Principal Engineer, Group Tenant Scale
+- **Position Applied For**: Principal Engineer
 
 GitLab is a complete DevOps platform delivered as a single application that enables organizations to implement and operate DevOps at scale. The company is known for its remote-first culture and open-source roots, with a strong emphasis on transparency and collaboration.
 

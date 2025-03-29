@@ -5,17 +5,17 @@ This document contains summary metrics and cross-project analysis for the 10x10 
 ## Summary Metrics (Across All Projects)
 
 ### Technology Distribution
-- **Frontend Frameworks**: React (6), Vue.js (1)
-- **Backend Technologies**: FastAPI (1), Express.js (1), AWS Lambda (6), DynamoDB (5), API Gateway (5), Go (1), AWS Batch (2), SQS (1)
-- **Languages**: TypeScript (7), Python (1), JavaScript (1), Go (1), Node.js (2)
-- **Cloud Providers**: AWS (6)
-- **AI/ML Technologies**: scikit-learn (1), LangChain.js (1), OpenRouter API/GPT-4o (1), Claude 3.7 API (1)
-- **Deployment Mechanisms**: None (1), AWS CDK (6)
+- **Frontend Frameworks**: React (7), Vue.js (1)
+- **Backend Technologies**: FastAPI (1), Express.js (1), AWS Lambda (7), DynamoDB (5), API Gateway (6), Go (1), AWS Batch (2), SQS (1), PostgreSQL with pgvector (1)
+- **Languages**: TypeScript (8), Python (1), JavaScript (1), Go (1), Node.js (3)
+- **Cloud Providers**: AWS (7)
+- **AI/ML Technologies**: scikit-learn (1), LangChain.js (1), OpenRouter API/GPT-4o (1), Claude API (2), Jina.ai API (1), VoyageAI API (1)
+- **Deployment Mechanisms**: None (1), AWS CDK (7)
 
 ### Resource Averages
 - **Average Hours Spent**: 8.0 hours (for completed projects)
-- **Average LLM Dollars Spent**: $32.86 (for projects with known LLM spend)
-- **Average Hosting Dollars Spent**: $1.67 (for projects with known hosting spend)
+- **Average LLM Dollars Spent**: $29.64 (for projects with known LLM spend)
+- **Average Hosting Dollars Spent**: $1.57 (for projects with known hosting spend)
 
 ### Outcome Statistics
 - **Response Rate**: 50% (2 out of 4 projects with known response status)

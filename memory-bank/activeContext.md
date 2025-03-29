@@ -43,6 +43,8 @@ The 10x10 Job Application Portfolio project is in its initial planning and setup
 - Created metrics and summary documents for the Vercel application
 - Executed the project completion procedure for the GitLab application
 - Created metrics and summary documents for the GitLab application
+- Executed the project completion procedure for the PostHog application
+- Created metrics and summary documents for the PostHog application
 
 ### Project Research
 - Analyzed the Anima application (Active Patient Follow-Up Alert Dashboard)
@@ -73,6 +75,14 @@ The 10x10 Job Application Portfolio project is in its initial planning and setup
 
 - Analyzed the Stitch Fix application
   - [To be filled with details about the Stitch Fix application]
+
+- Analyzed the PostHog application (AI Docs Chat)
+  - AI-powered documentation chat system for customer support automation
+  - Implements vector search with semantic reranking for relevant document retrieval
+  - Built with React, TypeScript, AWS Lambda, PostgreSQL with pgvector, and Claude AI
+  - Uses NX monorepo architecture with serverless deployment
+  - Features multi-tenant support with customer_id partitioning
+  - Includes comprehensive document processing pipeline (retrieval, chunking, vectorization)
 
 ### Project Summaries
 - Created comprehensive project summaries for all four completed projects:

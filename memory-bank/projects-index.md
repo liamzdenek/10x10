@@ -68,11 +68,15 @@ This document provides a quick reference to all projects in the 10x10 Job Applic
 - **Business Value**: Developer Productivity, Workflow Automation
 - **File**: [project-GitLab.md](./project-GitLab.md)
 
-## Upcoming Projects
-
-### 9. TBD
-- **Target Date**: March 30, 2025
+### 9. PostHog - AI Docs Chat
+- **Completion Date**: March 29, 2025
 - **Project Day**: 9
+- **Core Technology**: React, TypeScript, AWS Lambda, PostgreSQL with pgvector, Claude AI
+- **Project Type**: Full-Stack Web Application
+- **Business Value**: Customer Support Automation
+- **File**: [project-PostHog.md](./project-PostHog.md)
+
+## Upcoming Projects
 
 ### 10. TBD
 - **Target Date**: March 31, 2025
