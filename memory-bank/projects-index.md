@@ -52,18 +52,26 @@ This document provides a quick reference to all projects in the 10x10 Job Applic
 - **Business Value**: Developer Productivity, Code Maintenance
 - **File**: [project-Sourcegraph.md](./project-Sourcegraph.md)
 
+### 7. Vercel - Lead Qualification System
+- **Completion Date**: March 25, 2025
+- **Project Day**: 7
+- **Core Technology**: React, TypeScript, Express.js, AWS Lambda, DynamoDB, SQS
+- **Project Type**: Full-Stack Web Application
+- **Business Value**: Operational Efficiency, Revenue Growth
+- **File**: [project-Vercel.md](./project-Vercel.md)
+
+### 8. GitLab - AI PR Agent
+- **Completion Date**: March 29, 2025
+- **Project Day**: 8
+- **Core Technology**: React, TypeScript, AWS Lambda, DynamoDB, Claude API
+- **Project Type**: Full-Stack Web Application
+- **Business Value**: Developer Productivity, Workflow Automation
+- **File**: [project-GitLab.md](./project-GitLab.md)
+
 ## Upcoming Projects
 
-### 7. TBD
-- **Target Date**: March 25-26, 2025
-- **Project Day**: 7
-
-### 8. TBD
-- **Target Date**: March 27-28, 2025
-- **Project Day**: 8
-
 ### 9. TBD
-- **Target Date**: March 29-30, 2025
+- **Target Date**: March 30, 2025
 - **Project Day**: 9
 
 ### 10. TBD
