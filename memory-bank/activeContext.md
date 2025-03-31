@@ -16,6 +16,15 @@ The 10x10 Job Application Portfolio project has completed all 10 projects and is
 
 ## Recent Changes
 
+### Portfolio Design Plan
+- Created comprehensive portfolio design plan with detailed mockups
+- Designed two-column layout with expandable sidebar for project TOC
+- Developed dual approach for metrics display (per-project and cross-project)
+- Created mockups for project detail, metrics & insights, and FAQ pages
+- Designed mobile-responsive layouts for all pages
+- Planned email correspondence integration
+- Documented implementation plan with phased approach
+
 ### Memory Bank Setup
 - Created the core memory bank structure for the portfolio project
 - Established projectbrief.md defining the overall goals and requirements
