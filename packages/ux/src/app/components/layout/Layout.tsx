@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useMatches } from '@tanstack/react-router';
 import styles from './Layout.module.css';
+import projects from '../../../data/projects';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,21 +17,21 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   // Determine if a route is active
   const isActive = (path: string) => currentPath === path;
   
-  // Determine if a route is the parent of the current route
-  const isParentActive = (path: string) => currentPath.startsWith(path) && currentPath !== path;
-  
   // Get the page title based on the current route
   const getPageTitle = (matches: any[]) => {
     if (matches.length === 0) return 'Page';
     
     const pathname = matches[matches.length - 1].pathname;
     
-    if (pathname === '/') return 'Projects';
+    if (pathname === '/10x10') return 'Projects';
     
-    if (pathname.startsWith('/projects/')) {
+    if (pathname.startsWith('/10x10/projects/')) {
       const slug = pathname.split('/').pop() || '';
-      return `Project: ${slug.charAt(0).toUpperCase() + slug.slice(1)}`;
+      const project = projects.find(p => p.slug === slug);
+      return project ? `Project: ${project.company}` : 'Project';
     }
+    
+    if (pathname === '/10x10/faq') return 'FAQ';
     
     const pageName = pathname.split('/').pop() || 'Page';
     return pageName.charAt(0).toUpperCase() + pageName.slice(1);
@@ -47,19 +48,19 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           <ul className={styles.navList}>
             <li className={styles.navItem}>
               <Link 
-                to="/" 
-                className={isActive('/') ? styles.navLinkActive : styles.navLink}
+                to="/10x10" 
+                className={isActive('/10x10') ? styles.navLinkActive : styles.navLink}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Projects
               </Link>
               {/*
-              {isActive('/') && (
+              {isActive('/10x10') && (
                 <div className={styles.subNav}>
                   <ul className={styles.subNavList}>
                     <li className={styles.subNavItem}>
                       <Link 
-                        to="/" 
+                        to="/10x10" 
                         hash="overview"
                         className={styles.subNavLinkActive}
                       >
@@ -68,7 +69,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </li>
                     <li className={styles.subNavItem}>
                       <Link 
-                        to="/" 
+                        to="/10x10" 
                         hash="grid"
                         className={styles.subNavLink}
                       >
@@ -77,7 +78,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </li>
                     <li className={styles.subNavItem}>
                       <Link 
-                        to="/" 
+                        to="/10x10" 
                         hash="timeline"
                         className={styles.subNavLink}
                       >
@@ -92,8 +93,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             {/* These routes will be added later */}
             {/* <li className={styles.navItem}>
               <Link
-                to="/blog"
-                className={isActive('/blog') ? styles.navLinkActive : styles.navLink}
+                to="/10x10/blog"
+                className={isActive('/10x10/blog') ? styles.navLinkActive : styles.navLink}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
@@ -101,8 +102,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             </li>
             <li className={styles.navItem}>
               <Link
-                to="/metrics"
-                className={isActive('/metrics') ? styles.navLinkActive : styles.navLink}
+                to="/10x10/metrics"
+                className={isActive('/10x10/metrics') ? styles.navLinkActive : styles.navLink}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Metrics
@@ -110,8 +111,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             </li> */}
             <li className={styles.navItem}>
               <Link 
-                to="/faq" 
-                className={isActive('/faq') ? styles.navLinkActive : styles.navLink}
+                to="/10x10/faq" 
+                className={isActive('/10x10/faq') ? styles.navLinkActive : styles.navLink}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 FAQ
@@ -123,29 +124,28 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className={styles.projectList}>
           <h3 className={styles.projectListTitle}>Projects</h3>
           <ul className={styles.projectListItems}>
-            {[
-              { id: 1, name: 'Anima', slug: 'anima' },
-              { id: 2, name: 'Hiive', slug: 'hiive' },
-              { id: 3, name: 'Affirm', slug: 'affirm' },
-              { id: 4, name: 'SoFi', slug: 'sofi' },
-              { id: 5, name: 'Stitch Fix', slug: 'stitch-fix' },
-              { id: 6, name: 'Sourcegraph', slug: 'sourcegraph' },
-              { id: 7, name: 'Vercel', slug: 'vercel' },
-              { id: 8, name: 'GitLab', slug: 'gitlab' },
-              { id: 9, name: 'PostHog', slug: 'posthog' },
-              { id: 10, name: 'Zillow', slug: 'zillow' },
-            ].map((project) => (
-              <li key={project.id} className={styles.projectItem}>
-                <Link
-                  to="/projects/$slug"
-                  params={{ slug: project.slug }}
-                  className={currentPath.startsWith(`/projects/`) && currentPath.endsWith(project.slug) ? styles.projectLinkActive : styles.projectLink}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {project.id}. {project.name}
-                </Link>
-              </li>
-            ))}
+            {[...projects]
+              .sort((a, b) => b.id - a.id) // Reverse order (10 to 1)
+              .map((project) => {
+                // Check if the project has email responses
+                const hasResponse = project.emailThread && 
+                                   project.emailThread.responses && 
+                                   project.emailThread.responses.length > 0;
+                
+                return (
+                  <li key={project.id} className={styles.projectItem}>
+                    <Link
+                      to="/10x10/projects/$slug"
+                      params={{ slug: project.slug }}
+                      className={currentPath.startsWith(`/10x10/projects/`) && currentPath.endsWith(project.slug) ? styles.projectLinkActive : styles.projectLink}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {project.id}. {project.company}
+                      {hasResponse && <span className={styles.responseStar}>★</span>}
+                    </Link>
+                  </li>
+                );
+              })}
           </ul>
         </div>
         

@@ -3,22 +3,96 @@
   width: 100%;
 }
 
-.header {
+/* Product section with images and info */
+.productSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
   margin-bottom: var(--space-xxl);
+}
+
+.productImages {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.thumbnailList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 80px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnailActive {
+  border-color: var(--color-primary);
+}
+
+.mainImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--color-gray-100);
+}
+
+.featuredImage {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
   font-size: 36px;
   font-weight: 800;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   color: var(--color-primary);
 }
 
 .company {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: var(--space-lg);
   color: var(--color-gray-600);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.tag {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .description {
@@ -46,22 +120,101 @@
   color: var(--color-gray-500);
   margin-bottom: var(--space-xs);
   text-transform: uppercase;
+  display: block;
 }
 
 .metaValue {
   font-size: 16px;
   color: var(--color-black);
+  display: block;
 }
 
-.section {
+.links {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: auto;
+}
+
+.link {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: transparent;
+  border: var(--border-width) solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+
+.link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* Video section */
+.videoSection {
+  margin-bottom: var(--space-xxl);
+}
+
+.videoContainer {
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  background-color: var(--color-gray-100);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.videoIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Details section */
+.detailsSection {
   margin-bottom: var(--space-xxl);
 }
 
 .sectionTitle {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: var(--space-lg);
   color: var(--color-primary);
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+.subsectionTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-black);
+}
+
+.fullDescription {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  color: var(--color-black);
+}
+
+.valueList {
+  list-style-type: disc;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.valueItem {
+  margin-bottom: var(--space-sm);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .features {
@@ -85,47 +238,6 @@
 }
 
 .featureDescription {
-  font-size: 16px;
-  color: var(--color-gray-600);
-  line-height: 1.5;
-}
-
-.challenges {
-  margin-bottom: var(--space-xl);
-}
-
-.challengeItem {
-  margin-bottom: var(--space-lg);
-  padding: var(--space-lg);
-  background-color: var(--color-white);
-  border: var(--border-width) solid var(--color-gray-200);
-  border-radius: var(--border-radius);
-}
-
-.challengeTitle {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
-  color: var(--color-black);
-}
-
-.challengeSolution {
-  font-size: 16px;
-  color: var(--color-gray-600);
-  line-height: 1.5;
-}
-
-.learnings {
-  margin-bottom: var(--space-xl);
-}
-
-.learningsList {
-  list-style-type: disc;
-  padding-left: var(--space-xl);
-}
-
-.learningItem {
-  margin-bottom: var(--space-sm);
   font-size: 16px;
   color: var(--color-gray-600);
   line-height: 1.5;
@@ -161,6 +273,44 @@
   font-weight: 600;
 }
 
+.challenges {
+  margin-bottom: var(--space-xl);
+}
+
+.challengeItem {
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  background-color: var(--color-white);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+}
+
+.challengeTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-black);
+}
+
+.challengeSolution {
+  font-size: 16px;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
+.learningsList {
+  list-style-type: disc;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.learningItem {
+  margin-bottom: var(--space-sm);
+  font-size: 16px;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -190,48 +340,17 @@
   text-transform: uppercase;
 }
 
-.links {
-  display: flex;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
-}
-
-.link {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-lg);
-  background-color: transparent;
-  border: var(--border-width) solid var(--color-primary);
-  color: var(--color-primary);
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: var(--border-radius);
-  transition: all 0.2s ease;
-}
-
-.link:hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.jsonData {
-  background-color: var(--color-gray-100);
-  padding: var(--space-lg);
-  border-radius: var(--border-radius);
-  overflow: auto;
-  max-height: 500px;
-  font-family: monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: var(--space-xl);
-}
-
 @media (max-width: 768px) {
+  .productSection {
+    grid-template-columns: 1fr;
+  }
+  
   .title {
     font-size: 28px;
   }
   
   .company {
-    font-size: 18px;
+    font-size: 20px;
   }
   
   .features {

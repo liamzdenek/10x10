@@ -7,6 +7,7 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import vitePrerender from 'vite-plugin-prerender'
 import PuppeteerRenderer from './util/PuppeteerRenderer';
 import path from 'path';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 import { parseRouteManifest } from './util/parseRouteManifest';
 import { generateProjectRoutes } from './util/generateProjectRoutes';
@@ -39,7 +40,11 @@ export default defineConfig(async () => {
       react(),
       nxViteTsPaths(),
       nxCopyAssetsPlugin(['*.md']),
-
+      ViteImageOptimizer({
+        png: {
+          quality: 95,
+        }
+      }),
       vitePrerender({
         // Required - The path to the vite-outputted app to prerender.
         staticDir: path.join(__dirname, '../../dist/packages/ux/'),
@@ -63,6 +68,8 @@ export default defineConfig(async () => {
       commonjsOptions: {
         transformMixedEsModules: true,
       },
+      rollupOptions: {
+      }
     },
   }
 });

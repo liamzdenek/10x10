@@ -28,7 +28,7 @@
 ### Technical Metrics
 - **Primary Technologies**: React, TypeScript, Express.js, AWS Lambda, DynamoDB, SQS
 - **Secondary Technologies**: AWS CDK, CloudFront, API Gateway, Zod, React Query, TanStack Router
-- **Lines of Code**: ~5,000
+- **Lines of Code**: 9371 + 3506 md
 - **Deployment Mechanism**: AWS CDK with automated CI/CD pipeline
 
 ### Resource Utilization

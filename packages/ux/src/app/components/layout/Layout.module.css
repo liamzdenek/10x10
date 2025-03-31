@@ -86,7 +86,7 @@
 }
 
 .nav {
-  margin-bottom: var(--space-xxl);
+  margin-bottom: var(--space-sm);
 }
 
 .navList {
@@ -185,7 +185,9 @@
 }
 
 .projectLink {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-xs) var(--space-md);
   color: var(--color-gray-600);
   text-decoration: none;
@@ -205,6 +207,12 @@
   background-color: var(--color-primary);
   color: var(--color-white);
   font-weight: 600;
+}
+
+.responseStar {
+  color: gold;
+  margin-left: var(--space-xs);
+  font-size: 16px;
 }
 
 .footer {

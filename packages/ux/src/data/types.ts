@@ -1,8 +1,8 @@
 export interface Project {
-  id: number; // 1-10
-  slug: string; // e.g., "vercel"
-  title: string; // e.g., "Lead Qualification System"
-  company: string; // e.g., "Vercel"
+  id: number;
+  slug: string;
+  title: string;
+  company: string;
   shortDescription: string;
   fullDescription: string;
   completionDate: string;
@@ -40,6 +40,7 @@ export interface Project {
     llmCost: number;
     hostingCost: number;
   };
+  youtubeVideoId?: string; // YouTube video ID for embedding
   emailThread?: {
     initialOutreach: {
       date: string;

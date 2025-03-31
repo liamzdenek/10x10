@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from '@tanstack/react-router';
 import styles from './ProjectDetail.module.css';
 import projects from '../../../data/projects';
-import { Project } from '../../../data/types';
 
 export const ProjectDetail: React.FC = () => {
-  const { slug } = useParams({ from: '/projects/$slug' });
+  const { slug } = useParams({ from: '/10x10/projects/$slug' });
   
   // Find the project by slug
   const project = projects.find(p => p.slug === slug);
+  
+  // State for selected image
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
   if (!project) {
     return (
@@ -19,11 +21,186 @@ export const ProjectDetail: React.FC = () => {
     );
   }
   
+  // Set the selected image to the featured image if not already set
+  if (!selectedImage && project.images.featured) {
+    setSelectedImage(project.images.featured);
+  }
+  
+  // Format source code link
+  const sourceCodeLink = `https://github.com/liamzdenek/${project.company.toLowerCase()}-application`;
+  
   return (
     <div className={styles.container}>
-      {/* For now, just render the JSON data as requested */}
-      <div className={styles.jsonData}>
-        <pre>{JSON.stringify(project, null, 2)}</pre>
+      <div className={styles.productSection}>
+        <div className={styles.productImages}>
+          <div className={styles.thumbnailList}>
+            {project.images.gallery.map((image, index) => (
+              <div 
+                key={index} 
+                className={`${styles.thumbnail} ${selectedImage === image ? styles.thumbnailActive : ''}`}
+                onClick={() => setSelectedImage(image)}
+              >
+                <img src={image} alt={`${project.company} thumbnail ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+          <div className={styles.mainImage}>
+            {selectedImage && (
+              <img 
+                src={selectedImage} 
+                alt={`${project.company} main image`} 
+                className={styles.featuredImage}
+              />
+            )}
+          </div>
+        </div>
+        
+        <div className={styles.productInfo}>
+          <h1 className={styles.title}>{project.title}</h1>
+          <h2 className={styles.company}>{project.company}</h2>
+          
+          <div className={styles.tags}>
+            {project.projectType.map((type, index) => (
+              <span key={index} className={styles.tag}>{type}</span>
+            ))}
+          </div>
+          
+          <p className={styles.description}>{project.shortDescription}</p>
+          
+          <div className={styles.meta}>
+            <div className={styles.metaItem}>
+              <span className={styles.metaLabel}>Completion Date</span>
+              <span className={styles.metaValue}>{project.completionDate}</span>
+            </div>
+            <div className={styles.metaItem}>
+              <span className={styles.metaLabel}>Project Day</span>
+              <span className={styles.metaValue}>{project.projectDay} of 10</span>
+            </div>
+          </div>
+          
+          <div className={styles.links}>
+            <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      {/* YouTube video section */}
+      {project.youtubeVideoId && (
+        <div className={styles.videoSection}>
+          <h2 className={styles.sectionTitle}>Project Demo</h2>
+          <div className={styles.videoContainer}>
+            <iframe
+              src={`https://www.youtube.com/embed/${project.youtubeVideoId}`}
+              title={`${project.title} Demo`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className={styles.videoIframe}
+            ></iframe>
+          </div>
+        </div>
+      )}
+      
+      <div className={styles.detailsSection}>
+        <h2 className={styles.sectionTitle}>Project Details</h2>
+        <p className={styles.fullDescription}>{project.fullDescription}</p>
+        
+        <h3 className={styles.subsectionTitle}>Business Value</h3>
+        <ul className={styles.valueList}>
+          {project.businessValue.map((value, index) => (
+            <li key={index} className={styles.valueItem}>{value}</li>
+          ))}
+        </ul>
+        
+        <h3 className={styles.subsectionTitle}>Key Features</h3>
+        <div className={styles.features}>
+          {project.features.map((feature, index) => (
+            <div key={index} className={styles.featureItem}>
+              <h4 className={styles.featureTitle}>{feature.title}</h4>
+              <p className={styles.featureDescription}>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+        
+        <h3 className={styles.subsectionTitle}>Technologies Used</h3>
+        <div className={styles.technologies}>
+          <div className={styles.techCategory}>
+            <h4 className={styles.techCategoryTitle}>Frontend</h4>
+            <div className={styles.techList}>
+              {project.technologies.frontend.map((tech, index) => (
+                <span key={index} className={styles.techItem}>{tech}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div className={styles.techCategory}>
+            <h4 className={styles.techCategoryTitle}>Backend</h4>
+            <div className={styles.techList}>
+              {project.technologies.backend.map((tech, index) => (
+                <span key={index} className={styles.techItem}>{tech}</span>
+              ))}
+            </div>
+          </div>
+          
+          <div className={styles.techCategory}>
+            <h4 className={styles.techCategoryTitle}>DevOps</h4>
+            <div className={styles.techList}>
+              {project.technologies.devops.map((tech, index) => (
+                <span key={index} className={styles.techItem}>{tech}</span>
+              ))}
+            </div>
+          </div>
+          
+          {project.technologies.other.length > 0 && (
+            <div className={styles.techCategory}>
+              <h4 className={styles.techCategoryTitle}>Other</h4>
+              <div className={styles.techList}>
+                {project.technologies.other.map((tech, index) => (
+                  <span key={index} className={styles.techItem}>{tech}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+        
+        <h3 className={styles.subsectionTitle}>Challenges & Solutions</h3>
+        <div className={styles.challenges}>
+          {project.challenges.map((challenge, index) => (
+            <div key={index} className={styles.challengeItem}>
+              <h4 className={styles.challengeTitle}>{challenge.challenge}</h4>
+              <p className={styles.challengeSolution}>{challenge.solution}</p>
+            </div>
+          ))}
+        </div>
+        
+        <h3 className={styles.subsectionTitle}>Key Learnings</h3>
+        <ul className={styles.learningsList}>
+          {project.learnings.map((learning, index) => (
+            <li key={index} className={styles.learningItem}>{learning}</li>
+          ))}
+        </ul>
+        
+        <h3 className={styles.subsectionTitle}>Project Metrics</h3>
+        <div className={styles.metrics}>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>{project.metrics.hoursSpent}</div>
+            <div className={styles.metricLabel}>Hours Spent</div>
+          </div>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>{project.metrics.linesOfCode.toLocaleString()}</div>
+            <div className={styles.metricLabel}>Lines of Code</div>
+          </div>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>{project.metrics.linesOfMarkdown.toLocaleString()}</div>
+            <div className={styles.metricLabel}>Lines of Markdown</div>
+          </div>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>${project.metrics.llmCost}</div>
+            <div className={styles.metricLabel}>LLM Cost</div>
+          </div>
+        </div>
       </div>
     </div>
   );
