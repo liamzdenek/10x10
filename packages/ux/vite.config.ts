@@ -3,22 +3,25 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
-//import { ssr } from 'vite-plugin-ssr/plugin'
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import vitePrerender from 'vite-plugin-prerender'
-//const Renderer = vitePrerender.PuppeteerRenderer
 import PuppeteerRenderer from './util/PuppeteerRenderer';
-
-console.log('vite prerenderer', vitePrerender);
-//const Renderer = vitePrerender.JSDomRenderer;
 import path from 'path';
 
 import { parseRouteManifest } from './util/parseRouteManifest';
+import { generateProjectRoutes } from './util/generateProjectRoutes';
 
 export default defineConfig(async () => {
   const manifest = await parseRouteManifest();
-  const routes = Object.keys(manifest.routes).filter(v => v !== "__root__")
-  console.log('routes', routes);
+  const baseRoutes = Object.keys(manifest.routes).filter(v => v !== "__root__");
+  
+  // Generate project routes for prerendering
+  const projectRoutes = generateProjectRoutes();
+  
+  // Combine base routes with project routes
+  const allRoutes = [...baseRoutes, ...projectRoutes];
+  
+  console.log('Routes to prerender:', allRoutes);
 
   return {
     root: __dirname,
@@ -41,19 +44,18 @@ export default defineConfig(async () => {
         // Required - The path to the vite-outputted app to prerender.
         staticDir: path.join(__dirname, '../../dist/packages/ux/'),
         // Required - Routes to render.
-        routes,
+        routes: allRoutes,
 
         renderer: new PuppeteerRenderer({
-          renderAfterElementExists: '#root:not(:empty):not(:has(#pending))',
-          //headless: false,
+          // Wait until the root element exists and doesn't contain any text with "Loading..."
+          // This ensures all loading spinners are gone from the DOM
+          renderAfterElementExists: '#root:not(:empty):not(:has(#loading))',
+          navigationOptions: {
+            waitUntil: 'networkidle0',
+          }
         })
       }),
-      //ssr({ prerender: true }),
     ],
-    // Uncomment this if you are using workers.
-    // worker: {
-    //  plugins: [ nxViteTsPaths() ],
-    // },
     build: {
       outDir: '../../dist/packages/ux',
       emptyOutDir: true,

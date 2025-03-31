@@ -1,15 +1,19 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import App from './app/app';
-import { RouterProvider, createRouter } from '@tanstack/react-router'
+import { RouterProvider, createRouter } from '@tanstack/react-router';
+import Loading from './app/components/common/Loading';
 
 // Import the generated route tree
-import { routeTree } from './routeTree.gen'
+import { routeTree } from './routeTree.gen';
+
+// Import global styles
+import './styles.css';
 
 // Create a new router instance
-const router = createRouter({ routeTree,
-  defaultPendingComponent: () => <div id="pending"></div>, // TODO: replace with a real pending component. Note: html id="pending" is critical to the prerenderer
- })
+const router = createRouter({ 
+  routeTree,
+  defaultPendingComponent: Loading,
+});
 
 // Register the router instance for type safety
 declare module '@tanstack/react-router' {
