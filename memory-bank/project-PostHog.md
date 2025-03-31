@@ -146,7 +146,7 @@ The system follows a serverless, event-driven architecture with clear separation
 
 ### Resource Utilization
 - **LLM Dollars Spent**: $87.22
-- **Hosting Dollars Spent**: $0
+- **Hosting Dollars Spent**: $10 (est)
 
 ### Learning Metrics
 - **New Technologies Learned**: pgvector, VoyageAI API, Jina.ai API
