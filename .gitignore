@@ -5,3 +5,4 @@ memory-bank-prompt/
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
 node_modules
+dist
