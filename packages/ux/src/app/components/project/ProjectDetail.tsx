@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from '@tanstack/react-router';
+import { useParams, Link } from '@tanstack/react-router';
 import styles from './ProjectDetail.module.css';
 import projects from '../../../data/projects';
 import ImageViewer from '../common/ImageViewer';
@@ -35,6 +35,11 @@ export const ProjectDetail: React.FC = () => {
   
   // Format source code link
   const sourceCodeLink = `https://github.com/liamzdenek/${project.company.toLowerCase()}-application`;
+  
+  // Check if project has correspondence
+  const hasCorrespondence = project.emailThread && 
+                           project.emailThread.responses && 
+                           project.emailThread.responses.length > 0;
   
   // Open image viewer
   const openImageViewer = (imageSrc: string) => {
@@ -102,6 +107,15 @@ export const ProjectDetail: React.FC = () => {
             <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
               Source Code
             </a>
+            {hasCorrespondence && (
+              <Link 
+                to="/10x10/correspondence/$slug"
+                params={{ slug: project.slug }}
+                className={styles.link}
+              >
+                Correspondence
+              </Link>
+            )}
           </div>
         </div>
       </div>

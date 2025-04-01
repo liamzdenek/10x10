@@ -21,6 +21,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     if (path === '/10x10') {
       return currentPath === '/10x10' || currentPath === '/10x10/';
     }
+    // For correspondence, check if the path starts with '/10x10/correspondence'
+    if (path === '/10x10/correspondence') {
+      return currentPath.startsWith('/10x10/correspondence');
+    }
     // For other pages, check for exact match
     return currentPath === path;
   };
@@ -42,6 +46,12 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     if (pathname === '/10x10/faq') return 'FAQ';
     
     if (pathname === '/10x10/metrics') return 'Metrics';
+    
+    if (pathname.startsWith('/10x10/correspondence/')) {
+      const slug = pathname.split('/').pop() || '';
+      const project = projects.find(p => p.slug === slug);
+      return project ? `Correspondence: ${project.company}` : 'Correspondence';
+    }
     
     const pageName = pathname.split('/').pop() || 'Page';
     return pageName.charAt(0).toUpperCase() + pageName.slice(1);
@@ -105,6 +115,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     }
   };
 
+  // Get projects with responses for correspondence section
+  const projectsWithResponses = projects.filter(
+    p => p.emailThread && p.emailThread.responses && p.emailThread.responses.length > 0
+  );
+
   return (
     <div className={styles.container}>
       <aside 
@@ -135,6 +150,18 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 Metrics
               </Link>
             </li>
+            {projectsWithResponses.length > 0 && (
+              <li className={styles.navItem}>
+                <Link 
+                  to="/10x10/correspondence/$slug"
+                  params={{ slug: projectsWithResponses[0].slug }}
+                  className={isActive('/10x10/correspondence') ? styles.navLinkActive : styles.navLink}
+                  onClick={() => setIsSidebarOpen(false)}
+                >
+                  Correspondence
+                </Link>
+              </li>
+            )}
             <li className={styles.navItem}>
               <Link 
                 to="/10x10/faq" 
@@ -174,6 +201,28 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               })}
           </ul>
         </div>
+        
+        {projectsWithResponses.length > 0 && (
+          <div className={styles.projectList}>
+            <h3 className={styles.projectListTitle}>Correspondence</h3>
+            <ul className={styles.projectListItems}>
+              {projectsWithResponses
+                .sort((a, b) => b.id - a.id) // Reverse order (10 to 1)
+                .map((project) => (
+                  <li key={project.id} className={styles.projectItem}>
+                    <Link
+                      to="/10x10/correspondence/$slug"
+                      params={{ slug: project.slug }}
+                      className={currentPath.startsWith(`/10x10/correspondence/`) && currentPath.endsWith(project.slug) ? styles.projectLinkActive : styles.projectLink}
+                      onClick={() => setIsSidebarOpen(false)}
+                    >
+                      {project.id}. {project.company}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        )}
         
         <div className={styles.footer}>
           © 2025 10x10 Portfolio

@@ -24,6 +24,13 @@ const Metrics: React.FC = () => {
   const maxLLMCost = Math.max(...projectMetrics.map(p => p.llmCost));
   const maxHostingCost = Math.max(...projectMetrics.map(p => p.hostingCost));
   
+  // Calculate technology counts
+  const totalTechnologies = 
+    sortedTechnologies.frontend.length + 
+    sortedTechnologies.backend.length + 
+    sortedTechnologies.devops.length + 
+    sortedTechnologies.other.length;
+  
   return (
     <div className={styles.container}>
       <section className={styles.section}>
@@ -57,125 +64,21 @@ const Metrics: React.FC = () => {
             <div className={styles.metricValue}>${totalHostingCost.toFixed(2)}</div>
             <div className={styles.metricLabel}>Hosting Cost</div>
           </div>
-        </div>
-        
-        <div className={styles.metricsGrid}>
-          <div className={styles.metricsCard}>
-            <h2 className={styles.cardTitle}>Technology Distribution</h2>
-            
-            <div className={styles.techSection}>
-              <h3 className={styles.techTitle}>Frontend</h3>
-              <div className={styles.techList}>
-                {sortedTechnologies.frontend.map(([tech, count]) => (
-                  <div key={tech} className={styles.techItem}>
-                    <div className={styles.techName}>{tech}</div>
-                    <div className={styles.techBar}>
-                      <div 
-                        className={styles.techBarFill} 
-                        style={{ width: `${(count / totalProjects) * 100}%` }}
-                      ></div>
-                    </div>
-                    <div className={styles.techCount}>{count}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className={styles.techSection}>
-              <h3 className={styles.techTitle}>Backend</h3>
-              <div className={styles.techList}>
-                {sortedTechnologies.backend.map(([tech, count]) => (
-                  <div key={tech} className={styles.techItem}>
-                    <div className={styles.techName}>{tech}</div>
-                    <div className={styles.techBar}>
-                      <div 
-                        className={styles.techBarFill} 
-                        style={{ width: `${(count / totalProjects) * 100}%` }}
-                      ></div>
-                    </div>
-                    <div className={styles.techCount}>{count}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className={styles.techSection}>
-              <h3 className={styles.techTitle}>DevOps</h3>
-              <div className={styles.techList}>
-                {sortedTechnologies.devops.map(([tech, count]) => (
-                  <div key={tech} className={styles.techItem}>
-                    <div className={styles.techName}>{tech}</div>
-                    <div className={styles.techBar}>
-                      <div 
-                        className={styles.techBarFill} 
-                        style={{ width: `${(count / totalProjects) * 100}%` }}
-                      ></div>
-                    </div>
-                    <div className={styles.techCount}>{count}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className={styles.techSection}>
-              <h3 className={styles.techTitle}>Other</h3>
-              <div className={styles.techList}>
-                {sortedTechnologies.other.map(([tech, count]) => (
-                  <div key={tech} className={styles.techItem}>
-                    <div className={styles.techName}>{tech}</div>
-                    <div className={styles.techBar}>
-                      <div 
-                        className={styles.techBarFill} 
-                        style={{ width: `${(count / totalProjects) * 100}%` }}
-                      ></div>
-                    </div>
-                    <div className={styles.techCount}>{count}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>{sortedTechnologies.frontend.length}</div>
+            <div className={styles.metricLabel}>Frontend Technologies</div>
           </div>
-          
-          <div className={styles.metricsCard}>
-            <h2 className={styles.cardTitle}>Project Types</h2>
-            <div className={styles.chartContainer}>
-              {sortedProjectTypes.map(([type, count]) => (
-                <div key={type} className={styles.chartItem}>
-                  <div className={styles.chartLabel}>{type}</div>
-                  <div className={styles.chartBar}>
-                    <div 
-                      className={styles.chartBarFill} 
-                      style={{ width: `${(count / totalProjects) * 100}%` }}
-                    ></div>
-                  </div>
-                  <div className={styles.chartCount}>{count}</div>
-                </div>
-              ))}
-            </div>
-            
-            <h2 className={styles.cardTitle}>Business Value</h2>
-            <div className={styles.chartContainer}>
-              {sortedBusinessValues.slice(0, 5).map(([value, count]) => (
-                <div key={value} className={styles.chartItem}>
-                  <div className={styles.chartLabel}>{value}</div>
-                  <div className={styles.chartBar}>
-                    <div 
-                      className={styles.chartBarFill} 
-                      style={{ width: `${(count / totalProjects) * 100}%` }}
-                    ></div>
-                  </div>
-                  <div className={styles.chartCount}>{count}</div>
-                </div>
-              ))}
-            </div>
-            
-            <h2 className={styles.cardTitle}>Response Rate</h2>
-            <div className={styles.responseRate}>
-              <div className={styles.responseRateValue}>{responseRate.toFixed(0)}%</div>
-              <div className={styles.responseRateLabel}>
-                {projectsWithResponses} out of {totalProjects} projects received responses
-              </div>
-            </div>
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>{sortedTechnologies.backend.length}</div>
+            <div className={styles.metricLabel}>Backend Technologies</div>
+          </div>
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>{sortedTechnologies.devops.length}</div>
+            <div className={styles.metricLabel}>DevOps Technologies</div>
+          </div>
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>{sortedTechnologies.other.length}</div>
+            <div className={styles.metricLabel}>Other Technologies</div>
           </div>
         </div>
         
@@ -259,6 +162,7 @@ const Metrics: React.FC = () => {
               </div>
             ))}
           </div>
+          <p>Shoutout AWS Free Tier</p>
         </div>
       </section>
     </div>
