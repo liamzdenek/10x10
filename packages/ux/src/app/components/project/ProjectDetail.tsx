@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from '@tanstack/react-router';
 import styles from './ProjectDetail.module.css';
 import projects from '../../../data/projects';
+import ImageViewer from '../common/ImageViewer';
 
 export const ProjectDetail: React.FC = () => {
   const { slug } = useParams({ from: '/10x10/projects/$slug' });
@@ -11,6 +12,10 @@ export const ProjectDetail: React.FC = () => {
   
   // State for selected image
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  // State for image viewer
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [viewerImage, setViewerImage] = useState<string | null>(null);
   
   // Reset selected image when project changes
   useEffect(() => {
@@ -30,6 +35,17 @@ export const ProjectDetail: React.FC = () => {
   
   // Format source code link
   const sourceCodeLink = `https://github.com/liamzdenek/${project.company.toLowerCase()}-application`;
+  
+  // Open image viewer
+  const openImageViewer = (imageSrc: string) => {
+    setViewerImage(imageSrc);
+    setViewerOpen(true);
+  };
+  
+  // Close image viewer
+  const closeImageViewer = () => {
+    setViewerOpen(false);
+  };
   
   return (
     <div className={styles.container}>
@@ -52,6 +68,8 @@ export const ProjectDetail: React.FC = () => {
                 src={selectedImage} 
                 alt={`${project.company} main image`} 
                 className={styles.featuredImage}
+                onClick={() => openImageViewer(selectedImage)}
+                style={{ cursor: 'zoom-in' }}
               />
             )}
           </div>
@@ -209,6 +227,15 @@ export const ProjectDetail: React.FC = () => {
           ))}
         </ul>
       </div>
+      
+      {/* Image Viewer */}
+      {viewerOpen && viewerImage && (
+        <ImageViewer 
+          src={viewerImage} 
+          alt={`${project.company} image`} 
+          onClose={closeImageViewer} 
+        />
+      )}
     </div>
   );
 };
