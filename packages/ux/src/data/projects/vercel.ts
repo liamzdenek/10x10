@@ -77,7 +77,7 @@ const vercelProject: Project = {
     llmCost: 41.39,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'eLywXkIbJs8',
   emailThread: {
     initialOutreach: {
       date: 'March 25, 2025',

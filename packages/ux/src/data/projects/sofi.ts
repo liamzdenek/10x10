@@ -75,7 +75,7 @@ const sofiProject: Project = {
     llmCost: 45.27,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'uUbdlD0Vh2w',
   emailThread: {
     initialOutreach: {
       date: 'March 20, 2025',

@@ -74,7 +74,7 @@ const zillowProject: Project = {
     llmCost: 36.43,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: '7rh6t0hSgkU',
   emailThread: {
     initialOutreach: {
       date: 'March 28, 2025',

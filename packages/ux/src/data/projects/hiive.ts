@@ -72,7 +72,7 @@ const hiiveProject: Project = {
     llmCost: 32.89,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'g2M-KmRJ1zc',
   emailThread: {
     initialOutreach: {
       date: 'March 18, 2025',

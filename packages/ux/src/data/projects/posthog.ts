@@ -73,7 +73,7 @@ const posthogProject: Project = {
     llmCost: 87.22,
     hostingCost: 10
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'JwXxzYEbSKM', // Placeholder
   emailThread: {
     initialOutreach: {
       date: 'March 27, 2025',

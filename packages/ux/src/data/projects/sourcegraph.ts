@@ -78,7 +78,7 @@ const sourcegraphProject: Project = {
     llmCost: 85.97,
     hostingCost: 2
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'obPRvH0Kx1g',
   emailThread: {
     initialOutreach: {
       date: 'March 24, 2025',

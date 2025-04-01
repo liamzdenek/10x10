@@ -76,7 +76,7 @@ const stitchFixProject: Project = {
     llmCost: 51.90,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'nEy5vJQHAbo',
   emailThread: {
     initialOutreach: {
       date: 'March 21, 2025',

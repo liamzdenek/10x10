@@ -76,7 +76,7 @@ const gitlabProject: Project = {
     llmCost: 52.82,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'nOdLtflFM_U', // Placeholder
   emailThread: {
     initialOutreach: {
       date: 'March 26, 2025',

@@ -73,7 +73,7 @@ const affirmProject: Project = {
     llmCost: 24.96,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'NrSpkX8ck8g',
   emailThread: {
     initialOutreach: {
       date: 'March 19, 2025',

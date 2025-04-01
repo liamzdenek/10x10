@@ -74,7 +74,7 @@ const animaProject: Project = {
     llmCost: 13.94,
     hostingCost: 0
   },
-  youtubeVideoId: 'dQw4w9WgXcQ', // Placeholder
+  youtubeVideoId: 'VhsfZQxZQaA',
   emailThread: {
     initialOutreach: {
       date: 'March 17, 2025',
