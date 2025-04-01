@@ -1,95 +1,75 @@
 import React from 'react';
+import { Link } from '@tanstack/react-router';
 import styles from './Home.module.css';
 import projects from '../../../data/projects';
+import { useMetrics } from '../../context/MetricsContext';
 
 export const Home: React.FC = () => {
+  const { totalLinesOfCode, totalLLMCost, totalHoursSpent } = useMetrics();
+  
   return (
     <div className={styles.container}>
-      <section className={styles.hero} id="overview">
-        <h1 className={styles.title}>10 Projects in 10 Days</h1>
-        <p className={styles.subtitle}>
-          A showcase of real-world job applications built in 10 days, demonstrating technical skills, 
-          problem-solving abilities, and domain knowledge across different industries.
+      <section className={styles.section}>
+        <h1 className={styles.sectionTitle}>10x10 Challenge Projects</h1>
+        <p className={styles.sectionDescription}>
+          A showcase of 10 projects built in 10 days, each one demonstrating different technical skills and problem-solving abilities.
+          Each project was created as part of a job application to showcase my capabilities to potential employers.
         </p>
-      </section>
-
-      <section className={styles.statsContainer}>
-        <div className={styles.statItem}>
-          <div className={styles.statValue}>
-            {new Set(projects.flatMap(p => 
-              [...p.technologies.frontend, ...p.technologies.backend, ...p.technologies.devops]
-            )).size}
+        
+        <div className={styles.statsContainer}>
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>10</div>
+            <div className={styles.statLabel}>Projects</div>
           </div>
-          <div className={styles.statLabel}>Technologies</div>
-        </div>
-        <div className={styles.statItem}>
-          <div className={styles.statValue}>
-            {projects.reduce((sum, p) => sum + p.features.length, 0)}
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>10</div>
+            <div className={styles.statLabel}>Days</div>
           </div>
-          <div className={styles.statLabel}>Features</div>
-        </div>
-        <div className={styles.statItem}>
-          <div className={styles.statValue}>
-            {new Set(projects.flatMap(p => p.projectType)).size}
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>{totalHoursSpent}+</div>
+            <div className={styles.statLabel}>Hours</div>
           </div>
-          <div className={styles.statLabel}>Project Types</div>
-        </div>
-        <div className={styles.statItem}>
-          <div className={styles.statValue}>
-            {projects.reduce((sum, p) => sum + p.metrics.linesOfCode, 0).toLocaleString()}
+          <div className={styles.statItem}>
+            <div className={styles.statValue}>${totalLLMCost.toFixed(0)}+</div>
+            <div className={styles.statLabel}>LLM Cost</div>
           </div>
-          <div className={styles.statLabel}>Lines of Code</div>
         </div>
-      </section>
-
-      <section id="grid">
-        <h2 className={styles.sectionTitle}>Project Grid</h2>
-        <div className={styles.projectGrid}>
+        
+        <div className={styles.projectList}>
           {projects.map((project) => (
-            <div key={project.id} className={styles.projectCard}>
-              <div className={styles.projectImage}>
-                Project {project.id}
+            <Link
+              key={project.id}
+              to={`/10x10/projects/$slug`}
+              params={{ slug: project.slug }}
+              className={styles.projectRow}
+            >
+              <div className={styles.projectImageContainer}>
+                <img 
+                  src={project.images.featured} 
+                  alt={`${project.company} featured image`} 
+                  className={styles.projectRowImage}
+                />
               </div>
               <div className={styles.projectContent}>
-                <h3 className={styles.projectTitle}>{project.title}</h3>
-                <div className={styles.projectCompany}>{project.company}</div>
-                
+                <h2 className={styles.projectTitle}>
+                  {project.title}
+                </h2>
+                <h3 className={styles.projectCompany}>{project.company}</h3>
                 <div className={styles.projectTags}>
-                  {project.projectType.map((tag, index) => (
-                    <span key={index} className={styles.projectTag}>
-                      {tag}
-                    </span>
+                  {project.projectType.map((type, index) => (
+                    <span key={index} className={styles.projectTag}>{type}</span>
                   ))}
                 </div>
-                <p>{project.shortDescription}</p>
+                <p className={styles.projectDescription}>{project.shortDescription}</p>
+                <div className={styles.projectMeta}>
+                  <span className={styles.projectMetaItem}>Day {project.projectDay}</span>
+                  <span className={styles.projectMetaItem}>{project.completionDate}</span>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
-
-      {/*
-      <section className={styles.timeline} id="timeline">
-        <h2 className={styles.timelineTitle}>Timeline View</h2>
-        <div className={styles.timelineContent}>
-          [Interactive timeline showing the 10-day journey]
-        </div>
-      </section>
-
-      <section className={styles.blogPreview}>
-        <h2 className={styles.blogTitle}>Latest from the Blog</h2>
-        <div className={styles.blogCard}>
-          <h3 className={styles.blogPostTitle}>Lessons Learned from Building 10 Projects in 10 Days</h3>
-          <div className={styles.blogPostMeta}>March 31, 2025 • 5 min read</div>
-          <p className={styles.blogPostExcerpt}>
-            Completing 10 projects in 10 days was an intense challenge that taught me valuable lessons about 
-            rapid development, technology selection, and problem-solving. In this post, I share my key insights 
-            and what I would do differently next time.
-          </p>
-          <a href="#" className={styles.readMore}>Read More</a>
-        </div>
-      </section>
-      */}
     </div>
   );
 };

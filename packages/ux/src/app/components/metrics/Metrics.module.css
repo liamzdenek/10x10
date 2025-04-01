@@ -1,0 +1,341 @@
+/* Metrics page styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+}
+
+.sectionDescription {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: var(--space-xxl);
+  color: var(--color-black);
+}
+
+/* Summary metrics */
+.summaryMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xxl);
+}
+
+.metricCard {
+  background-color: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border: var(--border-width) solid var(--color-gray-200);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metricCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.metricValue {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.metricLabel {
+  font-size: 14px;
+  color: var(--color-gray-600);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Metrics grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xxl);
+}
+
+.metricsCard {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: var(--border-width) solid var(--color-gray-200);
+  margin-bottom: var(--space-xl);
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border-width) solid var(--color-gray-200);
+}
+
+/* Technology sections */
+.techSection {
+  margin-bottom: var(--space-xl);
+}
+
+.techTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: var(--color-black);
+}
+
+.techList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.techName {
+  width: 120px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.techBar {
+  flex: 1;
+  height: 12px;
+  background-color: var(--color-gray-200);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.techBarFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.techCount {
+  width: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  text-align: right;
+}
+
+/* Chart container */
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.chartItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.chartLabel {
+  width: 150px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chartBar {
+  flex: 1;
+  height: 16px;
+  background-color: var(--color-gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.chartBarFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+.chartCount {
+  width: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  text-align: right;
+}
+
+/* Project-specific charts */
+.projectChartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.projectChartItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.projectChartLabel {
+  width: 150px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.projectChartBar {
+  flex: 1;
+  height: 20px;
+  background-color: var(--color-gray-200);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.projectChartBarFill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.projectChartCount {
+  width: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+  text-align: right;
+}
+
+/* Response rate */
+.responseRate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background-color: var(--color-tertiary);
+  border-radius: var(--border-radius);
+}
+
+.responseRateValue {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.responseRateLabel {
+  font-size: 16px;
+  color: var(--color-gray-600);
+  text-align: center;
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .summaryMetrics {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .metricValue {
+    font-size: 30px;
+  }
+  
+  .techName, .chartLabel, .projectChartLabel {
+    width: 100px;
+  }
+  
+  .projectChartCount {
+    width: 70px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-md);
+  }
+  
+  .summaryMetrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .metricValue {
+    font-size: 24px;
+  }
+  
+  .metricLabel {
+    font-size: 12px;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+  }
+  
+  .sectionDescription {
+    font-size: 16px;
+  }
+  
+  .cardTitle {
+    font-size: 20px;
+  }
+  
+  .techName, .chartLabel, .projectChartLabel {
+    width: 80px;
+    font-size: 12px;
+  }
+  
+  .techCount, .chartCount {
+    font-size: 12px;
+  }
+  
+  .projectChartCount {
+    width: 60px;
+    font-size: 12px;
+  }
+  
+  .responseRateValue {
+    font-size: 36px;
+  }
+  
+  .responseRateLabel {
+    font-size: 14px;
+  }
+}

@@ -10,15 +10,19 @@ interface LayoutProps {
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const matches = useMatches();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
   
   // Get the current route path
   const currentPath = matches.length > 0 ? matches[matches.length - 1].pathname : '/';
 
   // Determine if a route is active
   const isActive = (path: string) => {
-
+    // For the projects page, check if the path is exactly '/10x10' or if it's the root of '/10x10/'
+    if (path === '/10x10') {
+      return currentPath === '/10x10' || currentPath === '/10x10/';
+    }
     // For other pages, check for exact match
-    return currentPath.replace(/\/$/, '') === path;
+    return currentPath === path;
   };
   
   // Get the page title based on the current route
@@ -37,9 +41,23 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     
     if (pathname === '/10x10/faq') return 'FAQ';
     
+    if (pathname === '/10x10/metrics') return 'Metrics';
+    
     const pageName = pathname.split('/').pop() || 'Page';
     return pageName.charAt(0).toUpperCase() + pageName.slice(1);
   };
+  
+  // Check if device is desktop on mount and window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1024);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   
   // Close sidebar when clicking outside on mobile/tablet
   useEffect(() => {
@@ -64,7 +82,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   // Prevent body scrolling when sidebar is open on mobile
   useEffect(() => {
     const handleBodyScroll = () => {
-      if (window.innerWidth <= 1024) {
+      if (!isDesktop) {
         if (isSidebarOpen) {
           document.body.style.overflow = 'hidden';
         } else {
@@ -74,23 +92,18 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
     
     handleBodyScroll();
-    window.addEventListener('resize', handleBodyScroll);
     
     return () => {
       document.body.style.overflow = '';
-      window.removeEventListener('resize', handleBodyScroll);
     };
-  }, [isSidebarOpen]);
+  }, [isSidebarOpen, isDesktop]);
   
   // Prevent event propagation for sidebar
   const handleSidebarClick = (e: React.MouseEvent) => {
-    if (window.innerWidth <= 1024) {
+    if (!isDesktop) {
       e.stopPropagation();
     }
   };
-
-  // Debug current path
-  console.log('Current path:', currentPath);
 
   return (
     <div className={styles.container}>
@@ -111,6 +124,15 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 onClick={() => setIsSidebarOpen(false)}
               >
                 Projects
+              </Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link 
+                to="/10x10/metrics" 
+                className={isActive('/10x10/metrics') ? styles.navLinkActive : styles.navLink}
+                onClick={() => setIsSidebarOpen(false)}
+              >
+                Metrics
               </Link>
             </li>
             <li className={styles.navItem}>

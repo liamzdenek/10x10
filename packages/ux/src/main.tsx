@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import './styles.css'
+import { MetricsProvider } from './app/context/MetricsContext'
 
 // Create a new router instance
 const router = createRouter({
@@ -28,7 +29,9 @@ if (!rootElement.innerHTML) {
   const root = createRoot(rootElement)
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <MetricsProvider>
+        <RouterProvider router={router} />
+      </MetricsProvider>
     </StrictMode>,
   )
 }
