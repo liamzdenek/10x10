@@ -1,5 +1,46 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hello [SVP Product], [SVP Engineering], [President and ex-CTO], and the team at Affirm,
+
+I'm Liam[1]. I'm a hands-on SWE with 14 YOE and a track record of exceptional impact. I'm interested in working in Engineering at Affirm.
+
+I made a project to apply to Affirm instead of sending a traditional application. I completed this project in about 7 hours by leveraging Agentic LLM development workflows. I recorded a five minute demo, linked below, but here is the quick summary:
+
+1. I've created a Merchant Analytics Dashboard that addresses a critical challenge in the BNPL space: merchant and commercial partners' visibility into the business impact of offering Affirm.
+2. Tech: Typescript, Lambda, S3, DynamoDB, CloudFront, API Gateway, Vite + Typescript + React
+3. Focus on solving a real problem rapidly and not getting caught on technical perfectionism
+4. I chose a project that centers key challenges to Affirm's business, demonstrating my product-oriented thinking.
+5. I'm drawn to Affirm because of the overlap between our goals. Particularly, I believe that I can accomplish my major learning goal at Affirm (improving my product-oriented thinking), and I believe that I can ship real features that meaningfully impact Affirm's business outcomes and key risks at the same time.
+
+5 Minute Merchant Analytics Dashboard Demo Video
+
+As I mention in the video, you can actually use the demo application here.
+
+Even though I don't mention it, you can find the source code here.
+
+If you're interested in hearing more, I have a lot more pieces of relevant experience to Affirm, focusing on domains such as crawl-to-run projects, teaching, empathetic communication, intentionality and accountability, etc. I can also do Leetcode, if you insist. But I'll save that for a future discussion.
+
+Thank you for your consideration, and I look forward to hearing back.
+
+Thanks,
+Liam Zdenek
+
+[1] [LinkedIn Link]
+`.trim();
+
+const SECOND_EMAIL = `
+Very cool. Thank you for putting this together and sharing. We'll ask the engineering recruiting team to follow-up with you.
+
+Best,
+
+-[President]
+`.trim();
+
+const THIRD_EMAIL = `
+Hey Libor. Thanks for watching & I'm glad you enjoyed it. I'm very appreciative of your time. Thanks for connecting me with the right people. I'm excited to hear from them. - Liam
+`.trim();
+
 const affirmProject: Project = {
   id: 3,
   slug: 'affirm',
@@ -75,17 +116,28 @@ const affirmProject: Project = {
   },
   youtubeVideoId: 'NrSpkX8ck8g',
   emailThread: {
-    initialOutreach: {
-      date: 'March 19, 2025',
-      subject: 'Application for Principal Software Engineer Position - Merchant Analytics Dashboard',
-      content: ''
-    },
-    responses: [
+    messages: [
       {
-        date: 'March 19, 2025',
-        subject: 'Re: Application for Principal Software Engineer Position',
-        content: 'Very cool'
-      }
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 19, 2025 @ 4:49 PM',
+        subject: 'Merchant Analytics Dashboard / Principal SWE Application',
+        content: FIRST_EMAIL
+      },
+      {
+        direction: 'received',
+        author: '[President]',
+        date: 'March 19, 2025 @ 8:24 PM',
+        subject: 'RE: Merchant Analytics Dashboard / Principal SWE Application',
+        content: SECOND_EMAIL
+      },
+      {
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 20, 2025 @ 9:02 AM',
+        subject: 'RE: Merchant Analytics Dashboard / Principal SWE Application',
+        content: THIRD_EMAIL
+      },
     ]
   }
 };

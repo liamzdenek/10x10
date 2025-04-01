@@ -1,5 +1,27 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hey [CTO], [CPO], and [Co-Founder],
+
+I built an AI Merge Request Agent in one day that drastically improves engineering productivity for many categories of change.
+
+5 Minute AI Merge Request Agent Demo Video
+
+Key points:
+- Developers describe changes in plain English
+- AI analyzes code and makes changes automatically
+- Creates pull requests with zero manual coding
+- Built on Claude 3.7 w/ scalable architecture on AWS
+
+I'd love to build the future of engineering productivity tooling with you at GitLab. I ask that you forward me to the right people to help make it happen.
+
+- Liam
+
+Full Demo Website
+
+Source Code
+`.trim();
+
 const gitlabProject: Project = {
   id: 8,
   slug: 'gitlab',
@@ -78,12 +100,15 @@ const gitlabProject: Project = {
   },
   youtubeVideoId: 'nOdLtflFM_U', // Placeholder
   emailThread: {
-    initialOutreach: {
-      date: 'March 26, 2025',
-      subject: 'Application for Principal Engineer Position - AI PR Agent',
-      content: ''
-    },
-    responses: []
+    messages: [
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'March 26, 2025',
+          subject: 'Principal Engineer Application / AI Merge Request Agent Demo',
+          content: FIRST_EMAIL
+        },
+    ]
   }
 };
 

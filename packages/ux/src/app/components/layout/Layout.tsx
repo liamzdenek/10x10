@@ -115,9 +115,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     }
   };
 
-  // Get projects with responses for correspondence section
-  const projectsWithResponses = projects.filter(
-    p => p.emailThread && p.emailThread.responses && p.emailThread.responses.length > 0
+  // Get projects with messages for correspondence section
+  const projectsWithMessages = projects.filter(
+    p => p.emailThread && p.emailThread.messages && p.emailThread.messages.length > 0
   );
 
   return (
@@ -150,11 +150,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                 Metrics
               </Link>
             </li>
-            {projectsWithResponses.length > 0 && (
+            {projectsWithMessages.length > 0 && (
               <li className={styles.navItem}>
                 <Link 
                   to="/10x10/correspondence/$slug"
-                  params={{ slug: projectsWithResponses[0].slug }}
+                  params={{ slug: projectsWithMessages[0].slug }}
                   className={isActive('/10x10/correspondence') ? styles.navLinkActive : styles.navLink}
                   onClick={() => setIsSidebarOpen(false)}
                 >
@@ -180,10 +180,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             {[...projects]
               .sort((a, b) => b.id - a.id) // Reverse order (10 to 1)
               .map((project) => {
-                // Check if the project has email responses
-                const hasResponse = project.emailThread && 
-                                   project.emailThread.responses && 
-                                   project.emailThread.responses.length > 0;
+                // Check if the project has email messages
+                const hasMessages = project.emailThread && 
+                                   project.emailThread.messages && 
+                                   project.emailThread.messages.length > 0 &&
+                                   project.emailThread.messages.find(v => v.direction === 'received') !== undefined;
                 
                 return (
                   <li key={project.id} className={styles.projectItem}>
@@ -194,7 +195,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                       onClick={() => setIsSidebarOpen(false)}
                     >
                       {project.id}. {project.company}
-                      {hasResponse && <span className={styles.responseStar}>★</span>}
+                      {hasMessages && <span className={styles.responseStar}>★</span>}
                     </Link>
                   </li>
                 );
@@ -202,11 +203,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           </ul>
         </div>
         
-        {projectsWithResponses.length > 0 && (
+        {projectsWithMessages.length > 0 && (
           <div className={styles.projectList}>
             <h3 className={styles.projectListTitle}>Correspondence</h3>
             <ul className={styles.projectListItems}>
-              {projectsWithResponses
+              {projectsWithMessages
                 .sort((a, b) => b.id - a.id) // Reverse order (10 to 1)
                 .map((project) => (
                   <li key={project.id} className={styles.projectItem}>

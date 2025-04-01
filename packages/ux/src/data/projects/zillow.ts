@@ -1,5 +1,27 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hey [CEO] and [Chairman],
+
+I built a RE Professional Health Dashboard from scratch in one day to help leaders at Zillow identify at-risk segments.
+
+5 Minute RE Professional Health Dashboard Demo Video
+
+Key points:
+- Collects key metrics about agents into one system
+- Generates summary metrics, enabling at-risk identification
+- Uses a simple forecasting model to predict intervention outcomes
+- Functional demo deployed on AWS
+
+I'd love to work together & contribute to problems that you care deeply about. I'd highly appreciate being forwarded to the right people to make that happen.
+
+- Liam
+
+Full Demo Website
+
+Source Code
+`.trim();
+
 const zillowProject: Project = {
   id: 10,
   slug: 'zillow',
@@ -76,12 +98,15 @@ const zillowProject: Project = {
   },
   youtubeVideoId: '7rh6t0hSgkU',
   emailThread: {
-    initialOutreach: {
-      date: 'March 28, 2025',
-      subject: 'Application for Principal Software Engineer Position - Real Estate Professional Health Dashboard',
-      content: ''
-    },
-    responses: []
+    messages: [
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'March 25, 2025',
+          subject: 'RE Professional Health Dashboard Demo / Princ. SDE Application',
+          content: FIRST_EMAIL
+        },
+    ]
   }
 };
 

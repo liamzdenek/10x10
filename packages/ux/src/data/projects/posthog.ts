@@ -1,5 +1,28 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hey [Co-Founder] and [Co-Founder],
+
+I built your AI Docs Chat idea into a functional prototype from scratch in one day.
+
+5 Minute AI Docs Chat Demo Video
+
+Key Points:
+- Collects documentation straight from your docs site
+- Generates useful answers by searching your docs
+- Uses Retrieval Augmented Generation w/ Claude 3.7
+- Functional prototype deployed on AWS
+
+I'd love to work together on products we could only dream of ten years ago. Let's chat.
+
+Thanks,
+Liam
+
+Live Demo Link
+
+Source Code
+`.trim();
+
 const posthogProject: Project = {
   id: 9,
   slug: 'posthog',
@@ -75,12 +98,15 @@ const posthogProject: Project = {
   },
   youtubeVideoId: 'JwXxzYEbSKM', // Placeholder
   emailThread: {
-    initialOutreach: {
-      date: 'March 27, 2025',
-      subject: 'Application for Senior Full Stack Engineer Position - AI Docs Chat',
-      content: ''
-    },
-    responses: []
+    messages: [
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'March 27, 2025',
+          subject: 'AI Docs Chat Demo / Princ. SDE Application',
+          content: FIRST_EMAIL
+        },
+    ]
   }
 };
 

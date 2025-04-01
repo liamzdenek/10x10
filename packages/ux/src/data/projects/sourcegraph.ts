@@ -1,5 +1,39 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hey [Top Engineer] & [Co-Founder and CEO],
+
+I built a Claude-powered Batch Changes Platform in one day that addresses a key pitfall of Sourcegraph's Batch Changes product: bespoke repositories.
+
+Key points:
+- Identifies repositories that may need changes
+- Generates bespoke patches for those repositories
+- Uses Claude 3.7 and scalable architecture on AWS
+
+5 Minute AI Batch Changes API Demo Video
+
+Steve: I was inspired to reach out due to your Saturday blog post on your vision for the future of AI-assisted programming.
+
+I'm in agreement about that vision. I believe Sourcegraph is uniquely positioned to build Agent Clusters and Agent Fleets, and I believe I'm uniquely positioned to help. Let's make it happen.
+
+- Liam
+
+Full Demo Website
+
+Source Code
+`.trim();
+
+const SECOND_EMAIL = `
+Hey Liam, that's really cool. Love the hustle too. [Employee 1] (cc'd) leads batch changes here along with [Employee 2] (cc'd) and has been working on this stuff as well, and [Employee 3] (cc'd) runs eng hiring here. We'd love to chat with you. [Employee 3] will follow up to find time.
+
+Best,
+[Co-Founder and CEO]
+`.trim();
+
+const THIRD_EMAIL = `
+Thanks for watching & I'm glad you enjoyed it. I'm very appreciative of your time. Thanks for connecting me with the right people; I'm excited to chat with the team. - Liam
+`.trim();
+
 const sourcegraphProject: Project = {
   id: 6,
   slug: 'sourcegraph',
@@ -80,17 +114,28 @@ const sourcegraphProject: Project = {
   },
   youtubeVideoId: 'obPRvH0Kx1g',
   emailThread: {
-    initialOutreach: {
-      date: 'March 24, 2025',
-      subject: 'Cody Batch - Autonomous Repository Remediation',
-      content: ''
-    },
-    responses: [
-      {
-        date: 'March 24, 2025',
-        subject: 'Re: Cody Batch - Autonomous Repository Remediation',
-        content: 'That\'s really cool. Love the hustle too.'
-      }
+    messages: [
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'March 24, 2025 @ 6:06 PM',
+          subject: 'Principal Engineer Application / Claude Batch Changes Demo',
+          content: FIRST_EMAIL
+        },
+        {
+            direction: "received",
+            author: "Co-Founder and CEO",
+            date: 'March 24, 2025 @ 11:30 PM',
+            subject: "RE: Principal Engineer Application / Claude Batch Changes Demo",
+            content: SECOND_EMAIL,
+        },
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'Mar 25, 2025 @ 1:12 PM',
+          subject: 'RE: Principal Engineer Application / Claude Batch Changes Demo',
+          content: THIRD_EMAIL
+        }
     ]
   }
 };

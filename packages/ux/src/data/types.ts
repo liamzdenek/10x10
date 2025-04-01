@@ -42,12 +42,9 @@ export interface Project {
   };
   youtubeVideoId?: string; // YouTube video ID for embedding
   emailThread?: {
-    initialOutreach: {
-      date: string;
-      subject: string;
-      content: string;
-    };
-    responses: {
+    messages: {
+      direction: 'sent' | 'received';
+      author: string;
       date: string;
       subject: string;
       content: string;

@@ -1,5 +1,29 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hi [Co-Founder], [Co-Founder], and the Anima Team,
+
+I'm Liam[1]. I'm a hands-on SWE with 14 YOE with a track record of impact. I'm interested in applying for the open Principal Engineer Role at Anima[2].
+
+I made a project to apply to your job instead of sending a traditional application. I completed this project in about five hours by leveraging Agentic LLM development workflows. I recorded a five minute demo, linked below, but here is the quick summary:
+
+1. A Blood Test Alert Dashboard to reduce missed abnormal test results, thereby saving lives
+2. Tech: Typescript data mocking, Offline Python ML pipeline (Training, Validation, and Inference), Vite + Typescript + React UI
+3. Focus on solving a real problem rapidly and not getting caught on technical perfectionism
+4. I tried to center clinical value and patient outcomes, demonstrating the same kind of thinking that I believe you're looking for.
+5. I'm drawn to Anima because of the overlap between our goals. Particularly, I believe that I can accomplish my major learning goal at Anima (improving my product-oriented thinking), and I believe that I can ship real features that have a real impact at the same time.
+
+5 Minute Blood Test Dashboard Demo Video
+
+If you're interested in seeing more, I have a lot more pieces of relevant experience to Anima, focusing on domains such as AWS, architecture, team culture, grassroots projects, teaching, sales, empathy, etc. I can also do Leetcode, if you insist. But I'll save that for a future discussion.
+
+Thank you for your consideration, and I look forward to hearing back,
+Liam Zdenek
+
+[1] [Linkedin Link]
+[2] [Job Listing Link]
+`.trim();
+
 const animaProject: Project = {
   id: 1,
   slug: 'anima',
@@ -76,12 +100,15 @@ const animaProject: Project = {
   },
   youtubeVideoId: 'VhsfZQxZQaA',
   emailThread: {
-    initialOutreach: {
-      date: 'March 17, 2025',
-      subject: 'Application for Principal Software Engineer Position - Active Patient Follow-Up Alert Dashboard',
-      content: ''
-    },
-    responses: []
+    messages: [
+      {
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 17, 2025',
+        subject: 'Blood Testing Demo / Principal SWE Application',
+        content: FIRST_EMAIL
+      }
+    ]
   }
 };
 

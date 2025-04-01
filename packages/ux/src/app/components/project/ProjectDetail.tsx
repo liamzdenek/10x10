@@ -37,9 +37,9 @@ export const ProjectDetail: React.FC = () => {
   const sourceCodeLink = `https://github.com/liamzdenek/${project.company.toLowerCase()}-application`;
   
   // Check if project has correspondence
-  const hasCorrespondence = project.emailThread && 
-                           project.emailThread.responses && 
-                           project.emailThread.responses.length > 0;
+  const hasMessages = project.emailThread && 
+                     project.emailThread.messages && 
+                     project.emailThread.messages.length > 0;
   
   // Open image viewer
   const openImageViewer = (imageSrc: string) => {
@@ -107,7 +107,7 @@ export const ProjectDetail: React.FC = () => {
             <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
               Source Code
             </a>
-            {hasCorrespondence && (
+            {hasMessages && (
               <Link 
                 to="/10x10/correspondence/$slug"
                 params={{ slug: project.slug }}

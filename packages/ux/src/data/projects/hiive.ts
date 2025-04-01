@@ -1,5 +1,50 @@
 import { Project } from '../types';
 
+
+const FIRST_EMAIL = `
+Hey [Co-Founder and CPTO], [Co-Founder and CRO], and the team at Hiive,
+
+I'm Liam[1]. I'm a hands-on SWE with 14 YOE and a track record of impact. I'm interested in applying to the open Principal Engineer role at Hiive[2]
+
+I made a project to apply to Hiive instead of sending a traditional application. I completed this project in about 7 hours by leveraging Agentic LLM development workflows. I recorded a five minute demo, linked below, but here is the quick summary:
+
+1. AI Market Sentiment Analyzer that addresses a critical challenge in private markets: information asymmetry. News articles are processed for sentiment, and then shared with Hiive's market participants.
+2. Tech: Typescript, Lambda, S3, CloudFront, API Gateway, Vite + Typescript + React
+3. Focus on solving a real problem rapidly and not getting caught on technical perfectionism
+4. I chose a project that centers customer-oriented and growth-oriented thinking, accelerating the Hiive flywheel maximally
+5. I'm drawn to Hiive because of the overlap between our goals. Particularly, I believe that I can accomplish my major learning goal at Hiive (improving my product-oriented thinking), and I believe that I can ship real features that meaningfully accelerate Hiive's growth at the same time.
+
+5 Minute AI Market Sentiment Analyzer Demo Video
+
+As I mention in the video, you can actually use the demo application here.
+
+Even though I don't mention it, you can find the source code here.
+
+If you're interested in seeing more, I have a lot more pieces of relevant experience to Hiive, focusing on domains such as conflict resolution, team culture, crawl-to-run projects, teaching, outbound sales, empathetic communication, intentionality, etc. I can also do Leetcode, if you insist. But I'll save that for a future discussion.
+
+Thank you for your consideration, and I look forward to hearing back.
+
+Thanks,
+Liam Zdenek
+
+
+
+P.S. I previously worked with your Principal Engineer [Name] at [Company] as equals under different orgs. We worked together on a project where I had to deliver features in a UX he owned. I am optimistic that he will give you an honest and net-positive review of me.
+
+[1] [LinkedIn Link]
+[2] [Job Listing Link]
+`.trim();
+
+const SECOND_EMAIL = `
+Hey [Co-Founder and CPTO] and [Co-Founder and CRO],
+
+In the meantime, I've been doing one of these projects every day to put together a portfolio of 10 from-scratch projects in 10 days.
+
+If you're interested in chatting, let me know. If not, I'd appreciate some feedback on why it's not a fit. Thanks.
+
+- Liam
+`.trim();
+
 const hiiveProject: Project = {
   id: 2,
   slug: 'hiive',
@@ -74,12 +119,22 @@ const hiiveProject: Project = {
   },
   youtubeVideoId: 'g2M-KmRJ1zc',
   emailThread: {
-    initialOutreach: {
-      date: 'March 18, 2025',
-      subject: 'Application for Principal Software Engineer Position - AI Market Sentiment Analyzer',
-      content: ''
-    },
-    responses: []
+    messages: [
+      {
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 18, 2025',
+        subject: 'AI Market Sentiment Analyzer / Principal SWE Application',
+        content: FIRST_EMAIL
+      },
+      {
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 26, 2025',
+        subject: 'Re: AI Market Sentiment Analyzer / Principal SWE Application',
+        content: SECOND_EMAIL
+      }
+    ]
   }
 };
 

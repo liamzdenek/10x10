@@ -7,5 +7,8 @@ import projects from '../src/data/projects';
  * @returns An array of project routes in the format '/10x10/projects/[slug]'
  */
 export function generateProjectRoutes(): string[] {
-  return projects.map(project => `/10x10/projects/${project.slug}`);
+  return [
+    ...projects.map(project => `/10x10/projects/${project.slug}`),
+    ...projects.map(project => `/10x10/correspondence/${project.slug}`),
+  ];
 }

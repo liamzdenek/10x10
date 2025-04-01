@@ -1,5 +1,36 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+[Cofounder], [CPTO], and [CEO],
+
+I built a client engagement system in one day that addresses Stitch Fix's client retention risk from your annual report.
+
+5 Minute Client Engagement System Demo Video
+
+Key points:
+- Identifies at-risk clients using engagement scoring
+- Generates personalized re-engagement emails automatically (AI)
+- Uses event-driven architecture for scalability on AWS
+
+I'd love the opportunity to work at Stitch Fix. If you think I could offer material impact on problems you care about, I would appreciate being forwarded to the right people to make it happen.
+
+- Liam
+
+Full Demo Website
+
+Source Code
+`.trim();
+
+const SECOND_EMAIL = `
+Hey [Cofounder], [CPTO], and [CEO],
+
+In the meantime, I've been doing one of these projects every day to put together a portfolio of 10 from-scratch projects in 10 days.
+
+If you're interested in working together, let me know. If not, I'd appreciate some feedback on why it's not a fit. Thanks.
+
+- Liam
+`.trim();
+
 const stitchFixProject: Project = {
   id: 5,
   slug: 'stitch-fix',
@@ -78,12 +109,22 @@ const stitchFixProject: Project = {
   },
   youtubeVideoId: 'nEy5vJQHAbo',
   emailThread: {
-    initialOutreach: {
-      date: 'March 21, 2025',
-      subject: 'Application for Principal Software Engineer Position - Client Engagement Acceleration System',
-      content: ''
-    },
-    responses: []
+    messages: [
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'March 21, 2025',
+          subject: 'Principal Engineer Application / Client Engagement System Demo',
+          content: FIRST_EMAIL
+        },
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'Apr 1, 2025',
+          subject: 'RE: Principal Engineer Application / Client Engagement System Demo',
+          content: SECOND_EMAIL
+        }
+    ]
   }
 };
 

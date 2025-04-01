@@ -1,5 +1,44 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hello [SVP Engineering] and [CTO], and the team at SoFi,
+
+I'm Liam[1]. I'm a hands-on SWE with 14 YOE and a track record of exceptional impact. I'm interested in working in Engineering at SoFi.
+
+I made a project to apply to SoFi instead of sending a traditional application. I completed this project in about 7 hours by leveraging Agentic LLM development workflows. I recorded a five minute demo, linked below, but here is the quick summary:
+
+1. Experimentation Platform: I've created a lightweight, cloud-native platform for rapid testing and validation of new features through A/B testing.
+2. Focus on solving a real problem rapidly and not getting caught on technical perfectionism
+3. I chose a project that centers a key area of growth for SoFi, because I see that you're staffing up your experimentation division.
+4. I'm drawn to SoFi because of the compatibility of our goals. I believe that I can accomplish my major learning goal at SoFi (improving my product-oriented thinking), and I believe that I can ship real features that meaningfully impact SoFi's business outcomes at the same time.
+5. Tech: Typescript, Lambda, S3, DynamoDB, AWS Batch, Java, CloudFront, API Gateway, Vite + Typescript + React
+
+5 Minute Experimentation Platform Demo Video
+
+As I mention in the video, you can actually use the demo application here.
+
+Even though I don't mention it, you can find the source code here.
+
+If you're interested in hearing more, I have a lot more pieces of relevant experience to SoFi, focusing on domains such as crawl-to-run projects, teaching, empathetic communication, intentionality and accountability, etc. I can also do Leetcode. But I'll save that for a future discussion.
+
+Thank you for your consideration, and I look forward to hearing back.
+
+Thanks,
+Liam Zdenek
+
+[1] [LinkedIn Link]
+`.trim();
+
+const SECOND_EMAIL = `
+Hey [SVP Engineering] and [CTO],
+
+In the meantime, I've been doing one of these projects every day to put together a portfolio of 10 from-scratch projects in 10 days.
+
+If you're interested in working together, let me know. If not, I'd appreciate some feedback on why it's not a fit. Thanks.
+
+- Liam
+`.trim();
+
 const sofiProject: Project = {
   id: 4,
   slug: 'sofi',
@@ -77,12 +116,22 @@ const sofiProject: Project = {
   },
   youtubeVideoId: 'uUbdlD0Vh2w',
   emailThread: {
-    initialOutreach: {
-      date: 'March 20, 2025',
-      subject: 'Application for Principal Software Engineer Position - Experimentation Platform Accelerator',
-      content: ''
-    },
-    responses: []
+    messages: [
+      {
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 20, 2025',
+        subject: 'Experimentation Platform Demo / Principal SWE Application',
+        content: FIRST_EMAIL
+      },
+      {
+        direction: 'sent',
+        author: 'Liam Zdenek',
+        date: 'March 27, 2025',
+        subject: 'RE: Experimentation Platform Demo / Principal SWE Application',
+        content: SECOND_EMAIL
+      }
+    ]
   }
 };
 

@@ -1,5 +1,27 @@
 import { Project } from '../types';
 
+const FIRST_EMAIL = `
+Hey [Hiring Manager], [SVP of Sales], and [CTO],
+
+I built a Lead Qualification System from scratch in one day that addresses a key challenge in SaaS Sales: efficiently identifying and qualifying high value leads.
+
+5 Minute Vercel Lead Qualification System Demo Video
+
+Key Points:
+- Identifies most valuable leads through a BANT assessment and computed qualification score
+- Generates real-time reports for Ops and Managers
+- Uses events from multiple systems (Salesforce etc) to produce the score
+- Highly scalable architecture on AWS
+
+If you agree that I would raise the bar at Vercel, I'd love the opportunity to work together. Please forward me to the right people to make it happen.
+
+- Liam
+
+Full Demo Website
+
+Source Code
+`.trim();
+
 const vercelProject: Project = {
   id: 7,
   slug: 'vercel',
@@ -79,12 +101,15 @@ const vercelProject: Project = {
   },
   youtubeVideoId: 'eLywXkIbJs8',
   emailThread: {
-    initialOutreach: {
-      date: 'March 25, 2025',
-      subject: 'Application for Head of GTM Systems - Lead Qualification System',
-      content: ''
-    },
-    responses: []
+    messages: [
+        {
+          direction: 'sent',
+          author: 'Liam Zdenek',
+          date: 'March 25, 2025',
+          subject: 'Lead Qualification System Demo / Head of GTM Systems Application',
+          content: FIRST_EMAIL
+        },
+    ]
   }
 };
 

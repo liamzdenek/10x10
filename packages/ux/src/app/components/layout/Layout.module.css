@@ -255,6 +255,7 @@
 
 .responseStar {
   color: gold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   margin-left: var(--space-xs);
   font-size: 16px;
 }
@@ -340,7 +341,7 @@
   }
   
   .contentContainer {
-    padding: var(--space-sm);
+    padding: var(--space-md);
   }
   
   .pageTitle {

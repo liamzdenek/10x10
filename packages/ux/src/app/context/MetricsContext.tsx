@@ -112,8 +112,8 @@ export const MetricsProvider: React.FC<{ children: ReactNode }> = ({ children })
     // Calculate response rate
     const projectsWithResponses = projects.filter(project => 
       project.emailThread && 
-      project.emailThread.responses && 
-      project.emailThread.responses.length > 0
+      project.emailThread.messages && 
+      project.emailThread.messages.length > 0
     ).length;
     
     const responseRate = (projectsWithResponses / totalProjects) * 100;
