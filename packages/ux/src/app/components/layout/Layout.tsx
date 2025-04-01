@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useMatches } from '@tanstack/react-router';
 import styles from './Layout.module.css';
 import projects from '../../../data/projects';
@@ -9,13 +9,17 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const matches = useMatches();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
   // Get the current route path
   const currentPath = matches.length > 0 ? matches[matches.length - 1].pathname : '/';
 
   // Determine if a route is active
-  const isActive = (path: string) => currentPath === path;
+  const isActive = (path: string) => {
+
+    // For other pages, check for exact match
+    return currentPath.replace(/\/$/, '') === path;
+  };
   
   // Get the page title based on the current route
   const getPageTitle = (matches: any[]) => {
@@ -23,7 +27,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     
     const pathname = matches[matches.length - 1].pathname;
     
-    if (pathname === '/10x10') return 'Projects';
+    if (pathname === '/10x10' || pathname === '/10x10/') return 'Projects';
     
     if (pathname.startsWith('/10x10/projects/')) {
       const slug = pathname.split('/').pop() || '';
@@ -36,10 +40,64 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     const pageName = pathname.split('/').pop() || 'Page';
     return pageName.charAt(0).toUpperCase() + pageName.slice(1);
   };
+  
+  // Close sidebar when clicking outside on mobile/tablet
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isSidebarOpen && !target.closest(`.${styles.sidebar}`) && !target.closest(`.${styles.hamburgerButton}`)) {
+        setIsSidebarOpen(false);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isSidebarOpen]);
+  
+  // Close sidebar when route changes on mobile/tablet
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [currentPath]);
+  
+  // Prevent body scrolling when sidebar is open on mobile
+  useEffect(() => {
+    const handleBodyScroll = () => {
+      if (window.innerWidth <= 1024) {
+        if (isSidebarOpen) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
+      }
+    };
+    
+    handleBodyScroll();
+    window.addEventListener('resize', handleBodyScroll);
+    
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('resize', handleBodyScroll);
+    };
+  }, [isSidebarOpen]);
+  
+  // Prevent event propagation for sidebar
+  const handleSidebarClick = (e: React.MouseEvent) => {
+    if (window.innerWidth <= 1024) {
+      e.stopPropagation();
+    }
+  };
+
+  // Debug current path
+  console.log('Current path:', currentPath);
 
   return (
     <div className={styles.container}>
-      <aside className={styles.sidebar}>
+      <aside 
+        className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ''}`}
+        onClick={handleSidebarClick}
+      >
         <header className={styles.headerLogo}>
           <div className={styles.logo}>10x10</div>
         </header>
@@ -50,70 +108,16 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link 
                 to="/10x10" 
                 className={isActive('/10x10') ? styles.navLinkActive : styles.navLink}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIsSidebarOpen(false)}
               >
                 Projects
               </Link>
-              {/*
-              {isActive('/10x10') && (
-                <div className={styles.subNav}>
-                  <ul className={styles.subNavList}>
-                    <li className={styles.subNavItem}>
-                      <Link 
-                        to="/10x10" 
-                        hash="overview"
-                        className={styles.subNavLinkActive}
-                      >
-                        Overview
-                      </Link>
-                    </li>
-                    <li className={styles.subNavItem}>
-                      <Link 
-                        to="/10x10" 
-                        hash="grid"
-                        className={styles.subNavLink}
-                      >
-                        Grid
-                      </Link>
-                    </li>
-                    <li className={styles.subNavItem}>
-                      <Link 
-                        to="/10x10" 
-                        hash="timeline"
-                        className={styles.subNavLink}
-                      >
-                        Timeline
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-              */}
             </li>
-            {/* These routes will be added later */}
-            {/* <li className={styles.navItem}>
-              <Link
-                to="/10x10/blog"
-                className={isActive('/10x10/blog') ? styles.navLinkActive : styles.navLink}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link
-                to="/10x10/metrics"
-                className={isActive('/10x10/metrics') ? styles.navLinkActive : styles.navLink}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Metrics
-              </Link>
-            </li> */}
             <li className={styles.navItem}>
               <Link 
                 to="/10x10/faq" 
                 className={isActive('/10x10/faq') ? styles.navLinkActive : styles.navLink}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIsSidebarOpen(false)}
               >
                 FAQ
               </Link>
@@ -138,7 +142,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
                       to="/10x10/projects/$slug"
                       params={{ slug: project.slug }}
                       className={currentPath.startsWith(`/10x10/projects/`) && currentPath.endsWith(project.slug) ? styles.projectLinkActive : styles.projectLink}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={() => setIsSidebarOpen(false)}
                     >
                       {project.id}. {project.company}
                       {hasResponse && <span className={styles.responseStar}>★</span>}
@@ -156,9 +160,23 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       
       <main className={styles.main}>
         <div className={styles.header}>
-          <h1 className={styles.pageTitle}>
-            {getPageTitle(matches)}
-          </h1>
+          <div className={styles.headerLeft}>
+            <button 
+              className={styles.hamburgerButton}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsSidebarOpen(!isSidebarOpen);
+              }}
+              aria-label="Toggle menu"
+            >
+              <span className={styles.hamburgerIcon}></span>
+              <span className={styles.hamburgerIcon}></span>
+              <span className={styles.hamburgerIcon}></span>
+            </button>
+            <h1 className={styles.pageTitle}>
+              {getPageTitle(matches)}
+            </h1>
+          </div>
           <button className={styles.cta}>Hire Me</button>
         </div>
         <div className={styles.mainContent}>
@@ -167,6 +185,17 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
       </main>
+      
+      {/* Overlay for mobile sidebar */}
+      {isSidebarOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsSidebarOpen(false);
+          }} 
+        />
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from '@tanstack/react-router';
 import styles from './ProjectDetail.module.css';
 import projects from '../../../data/projects';
@@ -12,6 +12,13 @@ export const ProjectDetail: React.FC = () => {
   // State for selected image
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
+  // Reset selected image when project changes
+  useEffect(() => {
+    if (project?.images.featured) {
+      setSelectedImage(project.images.featured);
+    }
+  }, [project]);
+  
   if (!project) {
     return (
       <div className={styles.container}>
@@ -19,11 +26,6 @@ export const ProjectDetail: React.FC = () => {
         <p>The project with slug "{slug}" could not be found.</p>
       </div>
     );
-  }
-  
-  // Set the selected image to the featured image if not already set
-  if (!selectedImage && project.images.featured) {
-    setSelectedImage(project.images.featured);
   }
   
   // Format source code link
@@ -103,6 +105,29 @@ export const ProjectDetail: React.FC = () => {
         </div>
       )}
       
+      {/* Project Metrics - Moved up below the video */}
+      <div className={styles.metricsSection}>
+        <h2 className={styles.sectionTitle}>Project Metrics</h2>
+        <div className={styles.metrics}>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>{project.metrics.hoursSpent}</div>
+            <div className={styles.metricLabel}>Hours Spent</div>
+          </div>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>{project.metrics.linesOfCode.toLocaleString()}</div>
+            <div className={styles.metricLabel}>Lines of Code</div>
+          </div>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>{project.metrics.linesOfMarkdown.toLocaleString()}</div>
+            <div className={styles.metricLabel}>Lines of Markdown</div>
+          </div>
+          <div className={styles.metricItem}>
+            <div className={styles.metricValue}>${project.metrics.llmCost}</div>
+            <div className={styles.metricLabel}>LLM Cost</div>
+          </div>
+        </div>
+      </div>
+      
       <div className={styles.detailsSection}>
         <h2 className={styles.sectionTitle}>Project Details</h2>
         <p className={styles.fullDescription}>{project.fullDescription}</p>
@@ -115,13 +140,15 @@ export const ProjectDetail: React.FC = () => {
         </ul>
         
         <h3 className={styles.subsectionTitle}>Key Features</h3>
-        <div className={styles.features}>
-          {project.features.map((feature, index) => (
-            <div key={index} className={styles.featureItem}>
-              <h4 className={styles.featureTitle}>{feature.title}</h4>
-              <p className={styles.featureDescription}>{feature.description}</p>
-            </div>
-          ))}
+        <div className={styles.featuresContainer}>
+          <div className={styles.features}>
+            {project.features.map((feature, index) => (
+              <div key={index} className={styles.featureItem}>
+                <h4 className={styles.featureTitle}>{feature.title}</h4>
+                <p className={styles.featureDescription}>{feature.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
         
         <h3 className={styles.subsectionTitle}>Technologies Used</h3>
@@ -181,26 +208,6 @@ export const ProjectDetail: React.FC = () => {
             <li key={index} className={styles.learningItem}>{learning}</li>
           ))}
         </ul>
-        
-        <h3 className={styles.subsectionTitle}>Project Metrics</h3>
-        <div className={styles.metrics}>
-          <div className={styles.metricItem}>
-            <div className={styles.metricValue}>{project.metrics.hoursSpent}</div>
-            <div className={styles.metricLabel}>Hours Spent</div>
-          </div>
-          <div className={styles.metricItem}>
-            <div className={styles.metricValue}>{project.metrics.linesOfCode.toLocaleString()}</div>
-            <div className={styles.metricLabel}>Lines of Code</div>
-          </div>
-          <div className={styles.metricItem}>
-            <div className={styles.metricValue}>{project.metrics.linesOfMarkdown.toLocaleString()}</div>
-            <div className={styles.metricLabel}>Lines of Markdown</div>
-          </div>
-          <div className={styles.metricItem}>
-            <div className={styles.metricValue}>${project.metrics.llmCost}</div>
-            <div className={styles.metricLabel}>LLM Cost</div>
-          </div>
-        </div>
       </div>
     </div>
   );

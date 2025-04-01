@@ -5,13 +5,16 @@
 
 /* Product section with images and info */
 .productSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-xl);
   margin-bottom: var(--space-xxl);
 }
 
 .productImages {
+  flex: 1;
+  min-width: 300px; /* Minimum width to prevent excessive shrinking */
+  max-width: 50%; /* Maximum width to maintain balance */
   display: flex;
   gap: var(--space-md);
 }
@@ -21,6 +24,7 @@
   flex-direction: column;
   gap: var(--space-sm);
   width: 80px;
+  flex-shrink: 0; /* Prevent thumbnails from shrinking */
 }
 
 .thumbnail {
@@ -61,6 +65,9 @@
 }
 
 .productInfo {
+  flex: 1;
+  min-width: 300px; /* Minimum width to prevent excessive shrinking */
+  max-width: 50%; /* Maximum width to maintain balance */
   display: flex;
   flex-direction: column;
 }
@@ -176,6 +183,40 @@
   border: none;
 }
 
+/* Metrics section - now positioned below video */
+.metricsSection {
+  margin-bottom: var(--space-xxl);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.metricItem {
+  background-color: var(--color-white);
+  padding: var(--space-lg);
+  border: var(--border-width) solid var(--color-gray-200);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.metricValue {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.metricLabel {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 /* Details section */
 .detailsSection {
   margin-bottom: var(--space-xxl);
@@ -217,11 +258,19 @@
   line-height: 1.5;
 }
 
+/* Features container to limit width on desktop */
+.featuresContainer {
+  display: flex;
+  justify-content: left;
+  margin-bottom: var(--space-xl);
+}
+
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
+  width: 100%;
+  max-width: 66.67%; /* 2/3 of the available width */
 }
 
 .featureItem {
@@ -311,53 +360,96 @@
   line-height: 1.5;
 }
 
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
-}
-
-.metricItem {
-  background-color: var(--color-white);
-  padding: var(--space-lg);
-  border: var(--border-width) solid var(--color-gray-200);
-  border-radius: var(--border-radius);
-  text-align: center;
-}
-
-.metricValue {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--color-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.metricLabel {
-  font-size: 14px;
-  color: var(--color-gray-500);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .productSection {
-    grid-template-columns: 1fr;
+/* Medium screens (1024px - 1200px) */
+@media (max-width: 1200px) {
+  .productImages,
+  .productInfo {
+    min-width: 280px; /* Slightly smaller minimum width */
   }
   
   .title {
-    font-size: 28px;
+    font-size: 30px;
   }
   
   .company {
     font-size: 20px;
   }
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .productImages,
+  .productInfo {
+    min-width: 250px; /* Even smaller minimum width */
+  }
+  
+  .thumbnailList {
+    width: 60px; /* Smaller thumbnails */
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .featuredImage {
+    max-height: 350px;
+  }
+  
+  .title {
+    font-size: 26px;
+  }
+  
+  .company {
+    font-size: 18px;
+  }
   
   .features {
     grid-template-columns: 1fr;
+    max-width: 100%; /* Full width on tablet */
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .productSection {
+    flex-direction: column;
   }
   
+  .productImages,
+  .productInfo {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .company {
+    font-size: 18px;
+  }
+  
+  /* Fix metrics display on mobile */
   .metrics {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+  
+  .metricItem {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: var(--space-md);
+  }
+  
+  .metricValue {
+    font-size: 24px;
+    margin-bottom: 0;
+    margin-right: var(--space-sm);
+  }
+  
+  .metricLabel {
+    font-size: 14px;
+    text-transform: lowercase;
   }
 }

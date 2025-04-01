@@ -53,7 +53,7 @@ export const Home: React.FC = () => {
               <div className={styles.projectContent}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
                 <div className={styles.projectCompany}>{project.company}</div>
-                {/*
+                
                 <div className={styles.projectTags}>
                   {project.projectType.map((tag, index) => (
                     <span key={index} className={styles.projectTag}>
@@ -62,7 +62,6 @@ export const Home: React.FC = () => {
                   ))}
                 </div>
                 <p>{project.shortDescription}</p>
-                */}
               </div>
             </div>
           ))}

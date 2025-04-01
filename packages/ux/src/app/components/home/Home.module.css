@@ -54,7 +54,7 @@
 }
 
 .section {
-  padding: var(--space-xxl) 0;
+  /* padding: var(--space-xxl) 0; */
   text-align: center;
 }
 
@@ -131,68 +131,119 @@
 }
 
 .sectionTitle {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 800;
   margin-bottom: var(--space-xl);
   color: var(--color-primary);
 }
 
-.projectGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xxxl);
+.sectionDescription {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+  color: var(--color-black);
 }
 
-.projectCard {
+/* Project list with rows */
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xxxl);
+  container-type: inline-size;
+}
+
+.projectRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Make image take up half the card */
+  gap: var(--space-md);
   background-color: var(--color-white);
   border: var(--border-width) solid var(--color-gray-200);
   border-radius: var(--border-radius);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  container-type: inline-size;
+  text-decoration: none; /* Since the whole card is now a link */
+  color: inherit;
+  position: relative; /* For the overlay animation */
 }
 
-.projectCard:hover {
+.projectRow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 112, 243, 0.05); /* Primary color with low opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.projectRow:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-color: var(--color-primary);
+  text-decoration: none;
 }
 
-.projectImage {
+.projectRow:hover::after {
+  opacity: 1;
+}
+
+.projectImageContainer {
   width: 100%;
-  height: 160px;
-  background-color: var(--color-quaternary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-weight: 700;
+  height: 100%; /* Taller image container */
+  overflow: hidden;
+  background-color: var(--color-gray-100);
+}
+
+.projectRowImage {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Show the whole image without cropping */
+  transition: transform 0.3s ease; /* Add animation to the image */
+}
+
+.projectRow:hover .projectRowImage {
+  transform: scale(1.05); /* Slightly zoom in on hover */
 }
 
 .projectContent {
-  padding: var(--space-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
 }
 
 .projectTitle {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   color: var(--color-black);
+  transition: color 0.3s ease;
+}
+
+.projectRow:hover .projectTitle {
+  color: var(--color-primary);
 }
 
 .projectCompany {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-primary);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   font-weight: 600;
 }
 
 .projectTags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .projectTag {
@@ -203,6 +254,27 @@
   font-weight: 600;
   border-radius: var(--border-radius);
 }
+
+.projectDescription {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-sm);
+}
+
+.projectMeta {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  color: var(--color-gray-500);
+  font-size: 12px;
+}
+
+.projectMetaItem {
+  display: inline-block;
+}
+
+/* Removed .projectLink as the whole card is now a link */
 
 .timeline {
   margin-bottom: var(--space-xxxl);
@@ -287,9 +359,70 @@
   color: var(--color-white);
 }
 
+/* Container queries for project rows */
+@container (max-width: 600px) {
+  .projectRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .projectImageContainer {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* Tablet styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  /* Two stats per row on tablet */
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+  
+  .statItem {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: var(--space-md);
+  }
+  
+  .statValue {
+    font-size: 32px;
+    margin-bottom: 0;
+    margin-right: var(--space-sm);
+  }
+  
+  .statLabel {
+    font-size: 14px;
+    text-transform: lowercase;
+  }
+  
+  /* Simplified project cards on tablet */
+  .projectRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .projectImageContainer {
+    width: 100%;
+    height: 300px; /* Taller image */
+  }
+  
+  /* Hide description, tags, and meta on tablet */
+  .projectDescription,
+  .projectTags,
+  .projectMeta {
+    display: none;
+  }
+  
+  .projectContent {
+    padding: var(--space-sm);
+  }
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .container {
-    padding: var(--space-lg);
+    padding: var(--space-md);
   }
   
   .hero {
@@ -304,12 +437,14 @@
     font-size: 18px;
   }
 
+  /* One stat per row on mobile */
   .statsContainer {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .projectGrid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .projectImageContainer {
+    height: 250px; /* Still tall on mobile */
   }
   
   .features {
