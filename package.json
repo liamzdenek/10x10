@@ -30,6 +30,7 @@
     "@swc/cli": "~0.3.12",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@tanstack/router-cli": "^1.114.34",
     "@tanstack/router-plugin": "^1.114.30",
     "@types/node": "^20.0.0",
     "@types/react": "19.0.0",
