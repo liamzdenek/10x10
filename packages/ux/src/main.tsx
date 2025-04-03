@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 import './styles.css'
@@ -41,13 +41,17 @@ router.history.subscribe(() => {
 
 // Render the app
 const rootElement = document.getElementById('root')!
-if (!rootElement.innerHTML) {
+
+const tree = (
+  <StrictMode>
+    <MetricsProvider>
+      <RouterProvider router={router} />
+    </MetricsProvider>
+  </StrictMode>
+);
+if (rootElement.innerHTML) {
+  hydrateRoot(rootElement, tree)
+} else {
   const root = createRoot(rootElement)
-  root.render(
-    <StrictMode>
-      <MetricsProvider>
-        <RouterProvider router={router} />
-      </MetricsProvider>
-    </StrictMode>,
-  )
+  root.render(tree);
 }
