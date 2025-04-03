@@ -15,7 +15,7 @@ export const Contact: React.FC<ContactProps> = () => {
           </p>
           
           <p className={styles.emailHint}>
-            <strong>my first/given name @ this domain</strong>
+            <strong>[my first/given name]@[this domain]</strong>
           </p>
           
           <p className={styles.contactText}>
