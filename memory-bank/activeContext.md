@@ -16,6 +16,15 @@ The 10x10 Job Application Portfolio project has completed all 10 projects and is
 
 ## Recent Changes
 
+### GitHub Pages Deployment
+- Created GitHub Actions workflow for deploying the portfolio to GitHub Pages
+- Configured workflow to install dependencies with `npm install`
+- Set up build process using `nx build ux`
+- Configured artifact upload for the `dist/packages/ux` directory
+- Implemented GitHub Pages deployment with proper permissions
+- Enabled manual triggering via workflow_dispatch
+- Set up concurrency control to prevent simultaneous deployments
+
 ### Portfolio Design Plan
 - Created comprehensive portfolio design plan with detailed mockups
 - Designed two-column layout with expandable sidebar for project TOC

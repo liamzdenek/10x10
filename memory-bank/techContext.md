@@ -145,10 +145,16 @@ npm run dev
 - **Accessibility Tests**: Automated a11y testing
 
 ### Deployment Process
-- **Environment Variables**: Managed through Vercel
-- **Preview Deployments**: Automatic for pull requests
+- **GitHub Pages**: Primary deployment platform using GitHub Actions
+- **Workflow Configuration**: Automated build and deployment pipeline
+- **Build Process**: Uses `nx build ux` to generate static assets
+- **Artifact Path**: Deploys the `dist/packages/ux` directory
+- **Deployment Trigger**: Automatic on main branch push or manual via workflow_dispatch
+- **Concurrency Control**: Prevents simultaneous deployments
+- **Environment Variables**: Managed through GitHub repository secrets
+- **Preview Deployments**: Automatic for pull requests (when configured)
 - **Production Deployment**: Automatic on main branch
-- **Rollback Strategy**: Quick rollback through Vercel dashboard
+- **Rollback Strategy**: Quick rollback through GitHub Actions history
 
 ## Project Integration
 
