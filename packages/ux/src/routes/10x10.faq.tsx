@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
-import React, { Fragment, ReactNode } from 'react';
-import { Tweet } from 'react-tweet'
+import React, { ReactNode } from 'react';
+import { Tweet } from 'react-tweet';
+import FAQComponent from '../app/components/faq/FAQ';
 
 export const Route = createFileRoute('/10x10/faq')({
-  component: FAQ,
+  component: FAQPage,
   head: () => ({
     meta: [
       {
@@ -82,7 +83,7 @@ const FAQ_DATA: Array<{question: string, answer: string | ReactNode}> = [
       <p>"straight to managers, ceo, ppl with incentive for the company to go well" - @GabrielPeters4 on Twitter</p>
       <p>I think Gabriel hit the nail on the head, but I will add: I think maybe Gabriel has a different experience from me, since he's applying to truly exceptional organizations (OpenAI, Midjourney, etc). However, I think in high-performing-but-not-exceptional organizations, the average manager sees their job as a 9-to-5 and isn't actually strongly incentive-aligned.</p>
       <p>But, clearly, finding the highly incentive-aligned people is critical.</p>
-      <p>The anecdata of the two responses I received were both from C-suite-plus, despite trying HMs and VPs.</p>
+      <p>The anecdata: the two responses I received were both from C-suite-plus, despite trying HMs and VPs.</p>
     </div>
   },
   {
@@ -98,7 +99,7 @@ const FAQ_DATA: Array<{question: string, answer: string | ReactNode}> = [
       <p>I think the key learning here is that you want to focus on what matters, and remove all unnecessary language.</p>
       <p>My friend Alex had the key insight (at the end of day 4) that I should try writing like Mark Zuckerberg from @TechEmails on twitter.</p>
       <p>You can see the effect when I put that idea to use on day 5. I think communication has a very high skill ceiling in general, and if you want to catch an executive's attention, then I think it makes sense to communicate like your email belongs in an executive's inbox.</p>
-      <p>I also think I'm a bit ambiguous/bury the lede about what I want from the executive in particular. I think it's better to just say it. "Forward me to your recruiting team." You're not playing around, so make your ask clear.</p>
+      <p>I also think, in my early emails, I'm a bit ambiguous/bury the lede about what I want from the executive in particular. I think it's better to just say it. "Forward me to your recruiting team." You're not playing around, so make your ask clear.</p>
     </div>
   },
   /*
@@ -194,20 +195,8 @@ const FAQ_DATA: Array<{question: string, answer: string | ReactNode}> = [
       </ol>
     </div>
   }
-]
+];
 
-function FAQ() {
-  return (
-    <div>
-      <h1>Frequently Asked Questions</h1>
-      <div style={{ marginTop: '2rem' }}>
-        {FAQ_DATA.map(datum => (
-          <Fragment key={datum.question}>
-            <h2>{datum.question}</h2>
-            {typeof datum.answer === 'string' ? <p>{datum.answer}</p> : datum.answer}
-          </Fragment>
-        ))}
-      </div>
-    </div>
-  );
+function FAQPage() {
+  return <FAQComponent faqData={FAQ_DATA} />;
 }

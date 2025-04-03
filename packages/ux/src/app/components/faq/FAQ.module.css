@@ -1,0 +1,124 @@
+/* Medium-like article styling */
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--font-family);
+  color: var(--color-black);
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: 24px;
+}
+
+.questionButton {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-black);
+  transition: color 0.2s ease;
+}
+
+.questionButton:hover {
+  color: var(--color-primary);
+}
+
+.questionButton:focus {
+  outline: none;
+}
+
+.icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.answer {
+  margin-top: 16px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--color-gray-800);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.answerOpen {
+  max-height: 5000px; /* Large enough to contain any answer */
+  opacity: 1;
+  margin-top: 24px;
+}
+
+/* Styling for answer content */
+.answer p {
+  margin-bottom: 20px;
+}
+
+.answer ul, .answer ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+
+.answer li {
+  margin-bottom: 12px;
+}
+
+.answer b, .answer strong {
+  font-weight: 600;
+}
+
+/* Center tweet */
+.tweetContainer {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+  
+  .title {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+  
+  .questionButton {
+    font-size: 20px;
+  }
+  
+  .answer {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
