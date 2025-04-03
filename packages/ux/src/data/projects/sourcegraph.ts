@@ -12,7 +12,7 @@ Key points:
 
 5 Minute AI Batch Changes API Demo Video
 
-Steve: I was inspired to reach out due to your Saturday blog post on your vision for the future of AI-assisted programming.
+[Top Engineer]: I was inspired to reach out due to your Saturday blog post on your vision for the future of AI-assisted programming.
 
 I'm in agreement about that vision. I believe Sourcegraph is uniquely positioned to build Agent Clusters and Agent Fleets, and I believe I'm uniquely positioned to help. Let's make it happen.
 
