@@ -19,8 +19,7 @@ export const Contact: React.FC<ContactProps> = () => {
           </p>
           
           <p className={styles.contactText}>
-            I'm always interested in discussing new opportunities, answering questions about my projects, 
-            or just connecting with fellow developers and potential employers.
+            I'm always interested in connecting with like-minded folks.
           </p>
         </div>
       </section>

@@ -111,7 +111,7 @@ const FAQ_DATA: Array<{question: string, answer: string | ReactNode}> = [
   {
     question: "How did you figure out what projects to make?",
     answer: <div>
-      <p>I used public filings or open job listings to identify areas of risk or opportunity. I used LLMs and real life friends to help me brainstorm on different ideas. I picked the idea that I thought was compelling.</p>
+      <p>I used public filings, blog posts, executive media appearances, and open job listings to identify areas of risk or opportunity. I used LLMs and real life friends to help me brainstorm on different ideas. I picked the idea that I thought was compelling.</p>
       <p>I filtered/modified those ideas to fit my experience.</p>
       <p>Really, the end goal is that the person you send this to thinks that you can do what they need. If an idea feels right, it's probably right, even if you found it a different way.</p>
     </div>
