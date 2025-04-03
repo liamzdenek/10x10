@@ -3,6 +3,29 @@ import React from 'react';
 
 export const Route = createFileRoute('/10x10/faq')({
   component: FAQ,
+  head: () => ({
+    meta: [
+      {
+        title: 'FAQ | 10x10 Portfolio',
+      },
+      {
+        name: 'description',
+        content: 'Frequently asked questions about the 10x10 Portfolio project.'
+      },
+      {
+        property: 'og:title',
+        content: 'FAQ | 10x10 Portfolio'
+      },
+      {
+        property: 'og:description',
+        content: 'Frequently asked questions about the 10x10 Portfolio project.'
+      },
+      {
+        property: 'og:type',
+        content: 'website'
+      }
+    ]
+  })
 });
 
 function FAQ() {

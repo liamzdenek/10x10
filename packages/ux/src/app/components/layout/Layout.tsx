@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useMatches } from '@tanstack/react-router';
+import { Link, useMatches, useNavigate } from '@tanstack/react-router';
 import styles from './Layout.module.css';
 import projects from '../../../data/projects';
 
@@ -9,6 +9,7 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const matches = useMatches();
+  const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
   
@@ -249,7 +250,24 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               {getPageTitle(matches)}
             </h1>
           </div>
-          <button className={styles.cta}>Hire Me</button>
+          <button
+            className={styles.cta}
+            onClick={() => {
+              // Track click with Google Analytics
+              if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'engagement',
+                  event_label: 'hire_me_button',
+                  value: 1
+                });
+              }
+              
+              // Navigate to contact page using TanStack Router
+              navigate({ to: '/10x10/contact' });
+            }}
+          >
+            Hire Me
+          </button>
         </div>
         <div className={styles.mainContent}>
           <div className={styles.contentContainer}>

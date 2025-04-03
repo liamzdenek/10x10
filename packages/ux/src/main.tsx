@@ -23,6 +23,22 @@ router.subscribe('onBeforeNavigate', () => {
   window.scrollTo(0, 0);
 });
 
+
+router.history.subscribe(() => {
+  const url = router.history.location.href;
+  const path = router.history.location.pathname;
+
+  // Track page view with Google Analytics
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: url,
+      page_path: path,
+      send_to: 'G-FX8NRGPVDK'
+    });
+  }
+})
+
 // Render the app
 const rootElement = document.getElementById('root')!
 if (!rootElement.innerHTML) {

@@ -1,0 +1,80 @@
+/* Contact page styles */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+}
+
+.section {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: var(--space-xl);
+  color: var(--color-primary);
+}
+
+.contactContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contactText {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  color: var(--color-black);
+}
+
+.emailHint {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: var(--color-tertiary);
+  border-radius: var(--border-radius);
+  font-size: 1.2rem;
+  text-align: center;
+  border: var(--border-width) solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .sectionTitle {
+    font-size: 36px;
+  }
+  
+  .contactText {
+    font-size: 16px;
+  }
+  
+  .emailHint {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-md);
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .contactText {
+    font-size: 14px;
+  }
+  
+  .emailHint {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,19 +1,19 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { createFileRoute, Navigate } from '@tanstack/react-router'
 import React, { useEffect } from 'react';
 import styles from '../app/components/home/Home.module.css';
+import Loading from '../app/components/common/Loading';
 
 const Redirect = () => {
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate({ to: '/10x10' });
-  });
-
-  return <></>
+  return <>
+    <Loading/>
+    <Navigate to="/10x10"/>
+  </>
 }
 
 export const Route = createFileRoute('/')({
   //component: HomePage,
+  
   component: Redirect
 })
 
