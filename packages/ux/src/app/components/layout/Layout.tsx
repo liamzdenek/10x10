@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useMatches, useNavigate } from '@tanstack/react-router';
 import styles from './Layout.module.css';
 import projects from '../../../data/projects';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,21 +13,46 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check if user has a theme preference
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        return savedTheme === 'dark';
+      }
+      // Check system preference
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
   
   // Get the current route path
   const currentPath = matches.length > 0 ? matches[matches.length - 1].pathname : '/';
 
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
+  };
+
+  // Apply dark mode class to document
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
   // Determine if a route is active
   const isActive = (path: string) => {
-    // For the projects page, check if the path is exactly '/10x10' or if it's the root of '/10x10/'
     if (path === '/10x10') {
       return currentPath === '/10x10' || currentPath === '/10x10/';
     }
-    // For correspondence, check if the path starts with '/10x10/correspondence'
     if (path === '/10x10/correspondence') {
       return currentPath.startsWith('/10x10/correspondence');
     }
-    // For other pages, check for exact match
     return currentPath === path;
   };
   
@@ -70,6 +96,18 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     };
   }, []);
   
+  // Handle scroll for header shadow
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   // Close sidebar when clicking outside on mobile/tablet
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -108,13 +146,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       document.body.style.overflow = '';
     };
   }, [isSidebarOpen, isDesktop]);
-  
-  // Prevent event propagation for sidebar
-  const handleSidebarClick = (e: React.MouseEvent) => {
-    if (!isDesktop) {
-      e.stopPropagation();
-    }
-  };
 
   // Get projects with messages for correspondence section
   const projectsWithMessages = projects.filter(
@@ -122,10 +153,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isDarkMode ? styles.dark : ''}`}>
       <aside 
         className={`${styles.sidebar} ${isSidebarOpen ? styles.sidebarOpen : ''}`}
-        onClick={handleSidebarClick}
+        onClick={(e) => e.stopPropagation()}
       >
         <header className={styles.headerLogo}>
           <div className={styles.logo}>10x10</div>
@@ -179,9 +210,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           <h3 className={styles.projectListTitle}>Projects</h3>
           <ul className={styles.projectListItems}>
             {[...projects]
-              .sort((a, b) => b.id - a.id) // Reverse order (10 to 1)
+              .sort((a, b) => b.id - a.id)
               .map((project) => {
-                // Check if the project has email messages
                 const hasMessages = project.emailThread && 
                                    project.emailThread.messages && 
                                    project.emailThread.messages.length > 0 &&
@@ -209,7 +239,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             <h3 className={styles.projectListTitle}>Correspondence</h3>
             <ul className={styles.projectListItems}>
               {projectsWithMessages
-                .sort((a, b) => b.id - a.id) // Reverse order (10 to 1)
+                .sort((a, b) => b.id - a.id)
                 .map((project) => (
                   <li key={project.id} className={styles.projectItem}>
                     <Link
@@ -232,7 +262,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       </aside>
       
       <main className={styles.main}>
-        <div className={styles.header}>
+        <div className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
           <div className={styles.headerLeft}>
             <button 
               className={styles.hamburgerButton}
@@ -250,24 +280,34 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               {getPageTitle(matches)}
             </h1>
           </div>
-          <button
-            className={styles.cta}
-            onClick={() => {
-              // Track click with Google Analytics
-              if (typeof window !== 'undefined' && window.gtag) {
-                window.gtag('event', 'click', {
-                  event_category: 'engagement',
-                  event_label: 'hire_me_button',
-                  value: 1
-                });
-              }
-              
-              // Navigate to contact page using TanStack Router
-              navigate({ to: '/10x10/contact' });
-            }}
-          >
-            Hire Me
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <button
+              className={styles.themeToggle}
+              onClick={toggleDarkMode}
+              aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDarkMode ? (
+                <SunIcon className={styles.themeIcon} />
+              ) : (
+                <MoonIcon className={styles.themeIcon} />
+              )}
+            </button>
+            <button
+              className={styles.cta}
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'click', {
+                    event_category: 'engagement',
+                    event_label: 'hire_me_button',
+                    value: 1
+                  });
+                }
+                navigate({ to: '/10x10/contact' });
+              }}
+            >
+              Hire Me
+            </button>
+          </div>
         </div>
         <div className={styles.mainContent}>
           <div className={styles.contentContainer}>
@@ -276,14 +316,10 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </main>
       
-      {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (
         <div 
           className={styles.overlay} 
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsSidebarOpen(false);
-          }} 
+          onClick={() => setIsSidebarOpen(false)} 
         />
       )}
     </div>

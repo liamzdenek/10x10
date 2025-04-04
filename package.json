@@ -13,6 +13,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@tanstack/react-router": "^1.114.29",
     "puppeteer": "^24.4.0",
     "react": "19.0.0",
