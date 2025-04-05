@@ -30,15 +30,11 @@ Liam Zdenek
 `.trim();
 
 const SECOND_EMAIL = `
-Very cool. Thank you for putting this together and sharing. We'll ask the engineering recruiting team to follow-up with you.
-
-Best,
-
--[President]
+Very cool. [...]
 `.trim();
 
 const THIRD_EMAIL = `
-Hey Libor. Thanks for watching & I'm glad you enjoyed it. I'm very appreciative of your time. Thanks for connecting me with the right people. I'm excited to hear from them. - Liam
+Hey [Name]. Thanks for watching & I'm glad you enjoyed it. I'm very appreciative of your time. Thanks for connecting me with the right people. I'm excited to hear from them. - Liam
 `.trim();
 
 const affirmProject: Project = {
@@ -126,7 +122,7 @@ const affirmProject: Project = {
       },
       {
         direction: 'received',
-        author: '[President]',
+        author: '[Name]',
         date: 'March 19, 2025 @ 8:24 PM',
         subject: 'RE: Merchant Analytics Dashboard / Principal SWE Application',
         content: SECOND_EMAIL

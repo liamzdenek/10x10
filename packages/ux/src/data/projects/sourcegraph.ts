@@ -24,10 +24,7 @@ Source Code
 `.trim();
 
 const SECOND_EMAIL = `
-Hey Liam, that's really cool. Love the hustle too. [Employee 1] (cc'd) leads batch changes here along with [Employee 2] (cc'd) and has been working on this stuff as well, and [Employee 3] (cc'd) runs eng hiring here. We'd love to chat with you. [Employee 3] will follow up to find time.
-
-Best,
-[Co-Founder and CEO]
+Hey Liam, that's really cool. Love the hustle too. [Redacted]
 `.trim();
 
 const THIRD_EMAIL = `
@@ -124,7 +121,7 @@ const sourcegraphProject: Project = {
         },
         {
             direction: "received",
-            author: "Co-Founder and CEO",
+            author: "[Name]",
             date: 'March 24, 2025 @ 11:30 PM',
             subject: "RE: Principal Engineer Application / Claude Batch Changes Demo",
             content: SECOND_EMAIL,

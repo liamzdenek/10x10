@@ -97,7 +97,7 @@ const FAQ_DATA: Array<{question: string, answer: string | ReactNode}> = [
     question: "Why do your emails change over time?",
     answer: <div>
       <p>I think the key learning here is that you want to focus on what matters, and remove all unnecessary language.</p>
-      <p>My friend Alex had the key insight (at the end of day 4) that I should try writing like Mark Zuckerberg from @TechEmails on twitter.</p>
+      <p>My friend had the key insight (at the end of day 4) that I should try writing like Mark Zuckerberg from @TechEmails on twitter.</p>
       <p>You can see the effect when I put that idea to use on day 5. I think communication has a very high skill ceiling in general, and if you want to catch an executive's attention, then I think it makes sense to communicate like your email belongs in an executive's inbox.</p>
       <p>I also think, in my early emails, I'm a bit ambiguous/bury the lede about what I want from the executive in particular. I think it's better to just say it. "Forward me to your recruiting team." You're not playing around, so make your ask clear.</p>
     </div>
@@ -176,6 +176,16 @@ const FAQ_DATA: Array<{question: string, answer: string | ReactNode}> = [
       <p>Maybe, that's a risk for actually landing a role, but don't think it's not an option if you don't want to try.</p>
       <p>If you have enough signal that they're looking for people like you, you don't need a job listing.</p>
       <p>Sourcegraph did not have an open role that was a good fit for me, but I did get a reply back. I read a blog post from the leadership at the company that indicated that we were aligned on vision. Even if they haven't put out a req yet, people are always looking for others that share their vision.</p>
+    </div>
+  },
+  {
+    question: "I want to try this strategy but I don't want to annoy powerful people.",
+    answer: <div>
+      <p>Intelligence is a rare commodity, but I find that courage is both more deisrable and more rare.</p>
+      <p>These people have a lot of problems to solve, and they know they need a lot of people on their team to effectively solve them.</p>
+      <p>When you say hey, I think I've got what it takes to solve your problems, you're an opportunity to meet their goals.</p>
+      <p>Not only are you not being an annoyance, you're going above & beyond by taking the initiative to find them, instead of making them find you.</p>
+      <p></p>
     </div>
   },
   {
